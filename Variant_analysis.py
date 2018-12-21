@@ -6,10 +6,11 @@ gnomad.exomes.r2.1.sites.chr21.vcf
 @author: dawid
 """
 import time
+import gzip
 
 data = []
 start = time.time()
-with open('/home/dawid/Pulpit/Variant_analysis_data/gnomad.exomes.r2.1.sites.vcf.bgz','r') as input_file, open('/home/dawid/Pulpit/Variant_analysis_data/data_1.txt','w') as output_file:
+with gzip.open('/home/dawid/Pulpit/Variant_analysis_data/gnomad.exomes.r2.1.sites.vcf.gz','r') as input_file, open('/home/dawid/Pulpit/Variant_analysis_data/data_1.txt','w') as output_file:
     for line in input_file.readlines():
         if line[0][0] == '#':
             continue
