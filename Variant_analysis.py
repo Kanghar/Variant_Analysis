@@ -6,11 +6,10 @@ gnomad.exomes.r2.1.sites.chr21.vcf
 @author: dawid
 """
 import time
-file_exist = True
 
 data = []
 start = time.time()
-with open('C:/Users/pkord/OneDrive/Pulpit/VA/gnomad.exomes.r2.1.sites.chr21.vcf','r') as input_file, open('C:/Users/pkord/OneDrive/Pulpit/VA/data_1.txt','w') as output_file:
+with open('/home/dawid/Pulpit/Variant_analysis_data/gnomad.exomes.r2.1.sites.vcf.bgz','r') as input_file, open('/home/dawid/Pulpit/Variant_analysis_data/data_1.txt','w') as output_file:
     for line in input_file.readlines():
         if line[0][0] == '#':
             continue
