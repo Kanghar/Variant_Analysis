@@ -6,11 +6,10 @@ gnomad.exomes.r2.1.sites.chr21.vcf
 @author: dawid
 """
 import time
-import gzip
 
 data = []
 start = time.time()
-with gzip.open('/home/dawid/Pulpit/Variant_analysis_data/gnomad.exomes.r2.1.sites.vcf.gz','r') as input_file, open('/home/dawid/Pulpit/Variant_analysis_data/data_1.txt','w') as output_file:
+with open('/home/dawid/Pulpit/Variant_analysis_data/gnomad.exomes.r2.1.sites.chr21.vcf','r') as input_file, open('/home/dawid/Pulpit/Variant_analysis_data/data_1.txt','w') as output_file:
     for line in input_file.readlines():
         if line[0][0] == '#':
             continue
@@ -20,10 +19,11 @@ with gzip.open('/home/dawid/Pulpit/Variant_analysis_data/gnomad.exomes.r2.1.site
         info[0] = info[0][len('AF='):]
         info[1] = info[1][len('AN='):]
         vep = info[-1].split(',')
-        for ele in vep:
-            vep_info = ele.strip().split('|')
-            vep_info = [vep_info[i] for i in [1,2,3,4,5,6,22]]
-            output_file.write('\t'.join(temp+info[0:2]+vep_info)+'\n')            
+        if line[6] == 'PASS':
+            for ele in vep:
+                vep_info = ele.strip().split('|')
+                vep_info = [vep_info[i] for i in [1,2,3,4,5,6,22]]
+                output_file.write('\t'.join(temp+info[0:2]+vep_info)+'\n')            
 
 end = time.time()
 print(end - start)
