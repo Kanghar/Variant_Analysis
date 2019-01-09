@@ -14,7 +14,7 @@ with open('/home/dawid/Pulpit/Variant_analysis_data/gnomad.exomes.r2.1.sites.chr
         if line[0][0] == '#':
             continue
         line = line.split('\t')
-        temp = [line[i] for i in [0,1,3,4,6]]
+        temp = [line[i] for i in [0,1,3,4]]
         info = line[7].split(';')
         info[0] = info[0][len('AF='):]
         info[1] = info[1][len('AN='):]
