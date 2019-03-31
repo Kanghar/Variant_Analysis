@@ -1,22 +1,28 @@
-
 #Wczytywanie_pliku
-install.packages("tidyverse")
-install.packages("ggplot2")
-
-
+library("plyr")
 library("tidyr")
 library("ff")
 library("ggplot2")
 library(reshape2)
 library(scales)
-
 library(wesanderson)
---
+#ktory_plik_do_czego
+#data_1.txt - orginalny z pelnymi nazwami wariantow
+#gnomad_all_chromo_2 -  tylko z 1 rodzajem wariantu
+#gnomad_new_cat_2 - zredukowane warianty
+
+
+
 gnomad_all_chromo <- read.csv.ffdf(file="gnomad_all_chromo_2.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
 
 gnomad_all_chromo <- read.csv.ffdf(file="gnomad_new_cat_2.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
 
-#gnomad_all_chromo<- read.csv.ffdf(file="data_1.txt",sep='\t', VERBOSE=TRUE, first.rows=10000, next.rows=50000, #colClasses=NA)
+table <- read.table('table_AN_2.csv', sep=',', head=TRUE) #tabela z AN
+table2 <- melt(table, id.vars = 'Chromosom')
+
+table_AN_AF <- read.table('table_AF_AN_2.csv', sep='\t', head=FALSE) #tabela z AF_AN - rzadkie warianty < 0.01
+names(table_AN_AF) = c("Chromosom","Wariant","AF","AN")
+
 
 #Formatowanie_plików
 names(gnomad_all_chromo)[1] <- "Chromosom"
@@ -29,6 +35,11 @@ variant_table <- table(gnomad_all_chromo[,1],gnomad_all_chromo[,8])
 write.table(variant_table, file = "table_AN1.csv", sep = ",")
 table <- read.table('table_AN_2.csv', sep=',', head=TRUE)
 table2 <- melt(table, id.vars = 'Chromosom')
+names(table2) = c("Chromosom","Wariant","AN")
+
+#przetwarzanie danych dal AF<0.01
+table3 = merge(mean_freq, table2, by=c("Chromosom","Wariant")) #najpierw wygenerowac table2(AN) i mean_freq(AF)
+write.table(table3, file = "table_AF_AN.csv", sep = "\t",row.names = F,col.names = F) 
 
 
 
@@ -43,8 +54,6 @@ table <- read.table('table - do wykresow.csv', sep=",", head=TRUE)
 names(table)[1] <- "Chromosom"
 table2 <- melt(table, id.vars = "Chromosom") 
 ##########
-#df_melt = melt(gnomad_all_chromo, id = c("Chromosom","Variant","AF"))
-#AF_table <- table(gnomad_all_chromo[,7],gnomad_all_chromo[,8])
 #Analiza
 mean_freq <- aggregate(gnomad_all_chromo[,7],list(gnomad_all_chromo[,1],gnomad_all_chromo[,8]),mean)
 names(mean_freq)[1]<-"Chromosom"
@@ -56,15 +65,15 @@ names(mean_allel_number)[1]<-"Chromosom"
 names(mean_allel_number)[2]<-"Wariant"
 names(mean_allel_number)[3]<-"value"
 
+table3 = merge(mean_freq, table2, by=c("Chromosom","Wariant"))
+
 #BARPLOTS
 ggplot(table2,aes(x = Chromosom, y = value, fill = variable)) + geom_bar(stat = "identity", colour = "black") + xlab("\nChromosom") + ylab("Liczba_wariantów\n") + guides(fill=guide_legend(title="Rodzaj wariantu")) + scale_x_continuous(breaks=1:22) 
 
 ggplot(table2,aes(x = Chromosom, y = value, fill = variable)) + geom_bar(position = "fill",stat = "identity",colour = "black") + scale_y_continuous(labels = percent_format()) + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Liczba_wariantów(w %)\n") + scale_x_continuous(breaks=1:22) 
 
-###??
+#Stacked_bar_AF
 ggplot(mean_freq,aes(x = Chromosom, y = Frekwencja, fill = Wariant)) + geom_bar(position = "fill",stat = "identity",colour = "black")  + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Frekwencja\n") + scale_x_continuous(breaks=1:22) 
-###??
-ggplot(mean_allel_number,aes(x = Chromosom, y = value, fill = Wariant)) + geom_bar(position = "fill",stat = "identity",colour = "black")  + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Frekwencja\n") + scale_x_continuous(breaks=1:22) 
 
 
 #brzydkie
@@ -79,3 +88,14 @@ ggplot(data=mean_allel_number, aes(x=Chromosom, y=value, fill=Wariant)) +
 
 ggplot(data=mean_freq, aes(x=Chromosom, y=Frekwencja, fill=Wariant)) +
   geom_bar(stat = "identity",colour = "black") + scale_x_continuous(breaks=1:22) 
+  
+  
+#rare_wariats_<_0.01 
+ggplot(table_AN_AF,aes(x = Chromosom, y = AN, fill = Wariant)) + geom_bar(stat = "identity", colour = "black") + xlab("\nChromosom") + ylab("Liczba_wariantów\n") + guides(fill=guide_legend(title="Rodzaj wariantu")) + scale_x_continuous(breaks=1:22) 
+
+
+  
+  
+  
+  
+
