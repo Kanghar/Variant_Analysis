@@ -8,6 +8,8 @@ library("ggplot2")
 library(reshape2)
 library(scales)
 library(wesanderson)
+library(biglm)
+library(ffbase)
 #ktory_plik_do_czego
 #data_1.txt - orginalny z pelnymi nazwami wariantow
 #gnomad_all_chromo_2 -  tylko z 1 rodzajem wariantu
@@ -128,11 +130,10 @@ ggplot(data=mean_freq, aes(x=Chromosom, y=Frekwencja, fill=Wariant)) +
   geom_bar(stat = "identity",colour = "black") + scale_x_continuous(breaks=1:22) 
   
 
+names(gnomad_all_chromo[1])
 
-
-
-
-
-
+#linear_model
+lm = bigglm(AN~Chromosom+Wariant,data=gnomad_all_chromo,chunksize=50000)
+aov = aov(AN~Chromosom+Wariant,data=gnomad_all_chromo)
 
 
