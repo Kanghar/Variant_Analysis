@@ -34,10 +34,20 @@ names(table_AN_AF) = c("Chromosom","Wariant","AF","AN")
 
 #Tworzenie tabeli z iloœcia wariantów
 variant_table <- table(gnomad_all_chromo[,1],gnomad_all_chromo[,8])
-write.table(variant_table, file = "table_AN1.csv", sep = ",")
-table <- read.table('table_AN_2.csv', sep=',', head=TRUE)
+write.table(variant_table, file = "table_AN_full.csv", sep = ",")
+
+table <- read.table('table_AN_full.csv', sep=',', head=TRUE)
 table2 <- melt(table, id.vars = 'Chromosom')
 names(table2) = c("Chromosom","Wariant","AN")
+
+table <- read.table('table_AN_full_cutted_2.csv', sep=',', head=TRUE)
+table2 <- melt(table, id.vars = 'Chromosom')
+names(table2) = c("Chromosom","Wariant","AN")
+
+#
+#table <- read.table('table_AN_2.csv', sep=',', head=TRUE)
+#table2 <- melt(table, id.vars = 'Chromosom')
+#names(table2) = c("Chromosom","Wariant","AN")
 
 #przetwarzanie danych dla AF<0.01 
 table3 = merge(mean_freq, table2, by=c("Chromosom","Wariant")) #najpierw wygenerowac table2(AN) i mean_freq(AF)
@@ -82,9 +92,9 @@ mean_freq_whole_genome$Frekwencja = mean_freq_whole_genome$Frekwencja/dim(gnomad
 
 #BAR_PLOTS
 #AN
-ggplot(table2,aes(x = Chromosom, y = value, fill = variable)) + geom_bar(stat = "identity", colour = "black") + xlab("\nChromosom") + ylab("Liczba_wariantów\n") + guides(fill=guide_legend(title="Rodzaj wariantu")) + scale_x_continuous(breaks=1:22) 
+ggplot(table2,aes(x = Chromosom, y = AN, fill = Wariant)) + geom_bar(stat = "identity", colour = "black") + xlab("\nChromosom") + ylab("Liczba_wariantów\n") + guides(fill=guide_legend(title="Rodzaj wariantu")) + scale_x_continuous(breaks=1:22) 
 
-ggplot(table2,aes(x = Chromosom, y = value, fill = variable)) + geom_bar(position = "fill",stat = "identity",colour = "black") + scale_y_continuous(labels = percent_format()) + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Liczba_wariantów(w %)\n") + scale_x_continuous(breaks=1:22) 
+ggplot(table2,aes(x = Chromosom, y = AN, fill = Wariant)) + geom_bar(position = "fill",stat = "identity",colour = "black") + scale_y_continuous(labels = percent_format()) + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Liczba_wariantów(w %)\n") + scale_x_continuous(breaks=1:22) 
 
 
 #Stacked_bar_AF
