@@ -78,13 +78,6 @@ mean_freq_whole_genome$Frekwencja = mean_freq_whole_genome$Frekwencja/dim(gnomad
 
 
 
-
-
-
-
-
-
-
 #WYKRESY
 
 #BAR_PLOTS
@@ -108,15 +101,6 @@ ggplot(mean_freq_whole_genome,aes(x = Chromosom, y = Frekwencja, fill = Wariant)
 
 
 
-
-
-
-
-
-
-
-
-
 #brzydkie
 ggplot(mean_freq,aes(x = Chromosom, y = Frekwencja)) + geom_bar(stat = "identity", fill = "#265fe2") + xlab("\nChromosom") + ylab("Frekwencja(w %)\n") + scale_y_continuous(labels = percent_format())
 #nie_³adne
@@ -131,9 +115,11 @@ ggplot(data=mean_freq, aes(x=Chromosom, y=Frekwencja, fill=Wariant)) +
   
 
 names(gnomad_all_chromo[1])
+names(gnomad_all_chromo) <- c('Chrom','Pos','Ref','Alt','AC','AN','AF','Variant','Impact','Gene_ID','Ens_Gene_ID','Unknown','Ens_trans','SNV')
 
 #linear_model
-lm = bigglm(AN~Chromosom+Wariant,data=gnomad_all_chromo,chunksize=50000)
-aov = aov(AN~Chromosom+Wariant,data=gnomad_all_chromo)
+lm = bigglm(AN~Chrom+Variant,data=gnomad_all_chromo,chunksize=50000)
+
+#aov = aov(AN~Chromosom+Wariant,data=gnomad_all_chromo)
 
 
