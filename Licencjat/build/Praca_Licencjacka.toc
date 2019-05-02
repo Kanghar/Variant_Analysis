@@ -1,0 +1,12 @@
+\contentsline {section}{\numberline {1}Wst\k ep}{4}% 
+\contentsline {subsection}{\numberline {1.1}Baza danych}{4}% 
+\contentsline {subsection}{\numberline {1.2}Zawarto\'s\'c pracy?}{4}% 
+\contentsline {subsection}{\numberline {1.3}U\.zyte oprogramowanie?}{4}% 
+\contentsline {section}{\numberline {2}Przetwarzanie danych}{4}% 
+\contentsline {subsection}{\numberline {2.1}Specyfikacja formatu VCF}{5}% 
+\contentsline {subsection}{\numberline {2.2}Przetwarzanie pliku}{6}% 
+\contentsline {subsection}{\numberline {2.3}Kod skryptu u\.zytego do wydobycia danych}{6}% 
+\contentsline {section}{\numberline {3}Analiza danych}{7}% 
+\contentsline {subsection}{\numberline {3.1}Warianty dotycz\k ace bia\IeC {\l }ek}{7}% 
+\contentsline {subsection}{\numberline {3.2}Wszystkie warianty genomu}{7}% 
+\contentsline {section}{\numberline {4}Bibliografia}{7}% 
