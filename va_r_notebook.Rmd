@@ -74,6 +74,9 @@ names(mean_allel_number)[3]<-"value"
 
 table3 = merge(mean_freq, table2, by=c("Chromosom","Wariant"))
 
+allel_number <- aggregate(gnomad_all_chromo[,6],list(gnomad_all_chromo[,8]),sum)
+names(allel_number)[1]<-"Wariant"
+names(allel_number)[2]<-"Ilosc"
 
 
 #srednia AF z ca³ego genomu
@@ -106,10 +109,7 @@ ggplot(table_AN_AF,aes(x = Chromosom, y = AN, fill = Wariant)) + geom_bar(stat =
 #Stacked_bar_AF_whole_genome_mean
 ggplot(mean_freq_whole_genome,aes(x = Chromosom, y = Frekwencja, fill = Wariant)) + geom_bar(position = "fill",stat = "identity",colour = "black")  + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Frekwencja\n") + scale_x_continuous(breaks=1:22) 
 
-
-
-
-
+ggplot(data=allel_number, aes(x=Wariant, y=Ilosc)) + geom_bar(stat="identity",fill = "#265fe2") + geom_text(aes(label = Ilosc,vjust=-1)) + theme(axis.text.x = element_text(angle = 45, hjust = 1))
 
 #brzydkie
 ggplot(mean_freq,aes(x = Chromosom, y = Frekwencja)) + geom_bar(stat = "identity", fill = "#265fe2") + xlab("\nChromosom") + ylab("Frekwencja(w %)\n") + scale_y_continuous(labels = percent_format())
