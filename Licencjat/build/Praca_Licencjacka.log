@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.2)  2 MAY 2019 18:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.2)  4 MAY 2019 22:19
 entering extended mode
 **./Praca_Licencjacka.tex
 (Praca_Licencjacka.tex
@@ -269,78 +269,82 @@ LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <8> on input line 2.
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <6> on input line 2.
-)
+
+[3])
 \tf@toc=\write4
 \openout4 = `Praca_Licencjacka.toc'.
 
+ [4]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
+ (D:\LaTeX\tex/latex/base\omscmr.fd
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
+ [5] [6] [7] [8]
+Overfull \vbox (2.2294pt too high) has occurred while \output is active []
 
-[3]
-<VCF_header.PNG, id=14, 735.49782pt x 167.12437pt>
+
+[9]
+<VCF_header.PNG, id=34, 735.49782pt x 167.12437pt>
 File: VCF_header.PNG Graphic file (type png)
 <use VCF_header.PNG>
-Package pdftex.def Info: VCF_header.PNG  used on input line 101.
+Package pdftex.def Info: VCF_header.PNG  used on input line 217.
 (pdftex.def)             Requested size: 485.43007pt x 110.30241pt.
 
-Overfull \hbox (13.39883pt too wide) in paragraph at lines 101--102
+Overfull \hbox (13.39883pt too wide) in paragraph at lines 217--218
  [][] 
  []
 
-[4]
-Overfull \hbox (6.36768pt too wide) in paragraph at lines 105--116
+[10]
+Overfull \hbox (6.36768pt too wide) in paragraph at lines 221--232
 [][]  
  []
 
-<VCF_1stline.PNG, id=19, 621.82312pt x 25.59563pt>
+<VCF_1stline.PNG, id=39, 621.82312pt x 25.59563pt>
 File: VCF_1stline.PNG Graphic file (type png)
 <use VCF_1stline.PNG>
-Package pdftex.def Info: VCF_1stline.PNG  used on input line 130.
+Package pdftex.def Info: VCF_1stline.PNG  used on input line 246.
 (pdftex.def)             Requested size: 485.02008pt x 19.9645pt.
 
-Overfull \hbox (12.98885pt too wide) in paragraph at lines 130--131
+Overfull \hbox (12.98885pt too wide) in paragraph at lines 246--247
  [][] 
  []
 
-[5 <./VCF_header.PNG>]
-LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 140
+[11 <./VCF_header.PNG>]
+LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 256
 .
 
 (C:\Users\dejwi\AppData\Roaming\MiKTeX\2.9\tex/latex/polski\ot4cmtt.fd
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-Overfull \hbox (682.69434pt too wide) in paragraph at lines 159--159
-[]\OT4/cmtt/m/n/12 with open('/home/dawid/Pulpit/Variant_analysis_data/gnomad.e
-xomes.r2.1.sites.chr21.vcf','r') as input_file, open('/home/dawid/Pulpit/Varian
-t_analysis_data/data_1.txt','w') as output_file:[] 
+Overfull \hbox (46.66902pt too wide) in paragraph at lines 278--278
+[]\OT4/cmtt/m/n/12 ('/home/dawid/Pulpit/Variant_analysis_data/gnomad.exomes.r2.
+1.sites.chr21.vcf' ,'r')[] 
  []
 
-
-Overfull \hbox (657.99432pt too wide) in paragraph at lines 159--159
-[]\OT4/cmtt/m/n/12 #with open('/media/dawid/Wirusy/Variant_analysis_data/gnomad
-.exomes.r2.1.sites.vcf','r') as input_file, open('/home/dawid/Pulpit/Variant_an
-alysis_data/data_1.txt','w') as output_file:[] 
- []
-
-[6 <./VCF_1stline.PNG>] [7]
+[12 <./VCF_1stline.PNG>] [13]
 (C:\Users\dejwi\OneDrive\Pulpit\Licencjat\build\Praca_Licencjacka.aux) ) 
 Here is how much of TeX's memory you used:
- 2617 strings out of 492897
- 37947 string characters out of 3142347
- 108982 words of memory out of 3000000
- 6484 multiletter control sequences out of 15000+200000
- 13418 words of font info for 37 fonts, out of 3000000 for 9000
+ 2635 strings out of 492897
+ 38212 string characters out of 3142347
+ 110982 words of memory out of 3000000
+ 6499 multiletter control sequences out of 15000+200000
+ 13675 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,32p,367b,223s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 41i,7n,32p,946b,225s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Use
 rs/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/pltt.enc}{C:/Users/dejwi
-/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plrm.enc}<C:/Users/dejwi/AppData
-/Roaming/MiKTeX/2.9/fonts/type1/public/pl/plbx12.pfb><C:/Users/dejwi/AppData/Ro
-aming/MiKTeX/2.9/fonts/type1/public/pl/plr12.pfb><C:/Users/dejwi/AppData/Roamin
-g/MiKTeX/2.9/fonts/type1/public/pl/plr17.pfb><C:/Users/dejwi/AppData/Roaming/Mi
-KTeX/2.9/fonts/type1/public/pl/pltt12.pfb>
+/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plrm.enc}<D:/LaTeX/fonts/type1/p
+ublic/amsfonts/cm/cmsy10.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/t
+ype1/public/pl/plbx12.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/type
+1/public/pl/plr12.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/type1/pu
+blic/pl/plr17.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
+/pl/pltt12.pfb>
 Output written on C:\Users\dejwi\OneDrive\Pulpit\Licencjat\build\Praca_Licencja
-cka.pdf (7 pages, 87468 bytes).
+cka.pdf (13 pages, 107526 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
+ 72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 
