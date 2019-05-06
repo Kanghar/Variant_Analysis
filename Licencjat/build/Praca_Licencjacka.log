@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.2)  4 MAY 2019 22:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7000 64-bit) (preloaded format=pdflatex 2019.5.2)  6 MAY 2019 12:09
 entering extended mode
 **./Praca_Licencjacka.tex
 (Praca_Licencjacka.tex
@@ -137,23 +137,44 @@ File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 \Gin@req@height=\dimen111
 \Gin@req@width=\dimen112
 )
+(C:\Users\dejwi\AppData\Roaming\MiKTeX\2.9\tex/latex/ms\ragged2e.sty
+Package: ragged2e 2009/05/21 v2.1 ragged2e Package (MS)
+
+(C:\Users\dejwi\AppData\Roaming\MiKTeX\2.9\tex/latex/ms\everysel.sty
+Package: everysel 2011/10/28 v1.2 EverySelectfont Package (MS)
+)
+\CenteringLeftskip=\skip43
+\RaggedLeftLeftskip=\skip44
+\RaggedRightLeftskip=\skip45
+\CenteringRightskip=\skip46
+\RaggedLeftRightskip=\skip47
+\RaggedRightRightskip=\skip48
+\CenteringParfillskip=\skip49
+\RaggedLeftParfillskip=\skip50
+\RaggedRightParfillskip=\skip51
+\JustifyingParfillskip=\skip52
+\CenteringParindent=\skip53
+\RaggedLeftParindent=\skip54
+\RaggedRightParindent=\skip55
+\JustifyingParindent=\skip56
+)
 (C:\Users\dejwi\OneDrive\Pulpit\Licencjat\build\Praca_Licencjacka.aux)
 \openout1 = `Praca_Licencjacka.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 21.
-LaTeX Font Info:    ... okay on input line 21.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 24.
+LaTeX Font Info:    ... okay on input line 24.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -244,7 +265,10 @@ Package grfext Info: Graphics extension search list:
 (grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
-) [1
+)
+ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 24.
+ [1
 
 {C:/Users/dejwi/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]
 (C:\Users\dejwi\OneDrive\Pulpit\Licencjat\build\Praca_Licencjacka.toc
@@ -275,76 +299,91 @@ LaTeX Font Info:    External font `plex10' loaded for size
 \openout4 = `Praca_Licencjacka.toc'.
 
  [4]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 86.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 91.
  (D:\LaTeX\tex/latex/base\omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 86.
- [5] [6] [7] [8]
-Overfull \vbox (2.2294pt too high) has occurred while \output is active []
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 91.
+ [5] [6] [7] [8] [9] [10]
+Overfull \vbox (6.36276pt too high) has occurred while \output is active []
 
 
-[9]
-<VCF_header.PNG, id=34, 735.49782pt x 167.12437pt>
+[11] [12]
+<VCF_header.PNG, id=43, 735.49782pt x 167.12437pt>
 File: VCF_header.PNG Graphic file (type png)
 <use VCF_header.PNG>
-Package pdftex.def Info: VCF_header.PNG  used on input line 217.
+Package pdftex.def Info: VCF_header.PNG  used on input line 262.
 (pdftex.def)             Requested size: 485.43007pt x 110.30241pt.
 
-Overfull \hbox (13.39883pt too wide) in paragraph at lines 217--218
+Overfull \hbox (13.39883pt too wide) in paragraph at lines 262--263
  [][] 
  []
 
-[10]
-Overfull \hbox (6.36768pt too wide) in paragraph at lines 221--232
-[][]  
+
+Overfull \hbox (6.36768pt too wide) in paragraph at lines 267--278
+ [] 
  []
 
-<VCF_1stline.PNG, id=39, 621.82312pt x 25.59563pt>
+[13 <./VCF_header.PNG>]
+<VCF_1stline.PNG, id=50, 621.82312pt x 25.59563pt>
 File: VCF_1stline.PNG Graphic file (type png)
 <use VCF_1stline.PNG>
-Package pdftex.def Info: VCF_1stline.PNG  used on input line 246.
+Package pdftex.def Info: VCF_1stline.PNG  used on input line 293.
 (pdftex.def)             Requested size: 485.02008pt x 19.9645pt.
 
-Overfull \hbox (12.98885pt too wide) in paragraph at lines 246--247
+Overfull \hbox (12.98885pt too wide) in paragraph at lines 293--294
  [][] 
  []
 
-[11 <./VCF_header.PNG>]
-LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 256
+LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 305
 .
-
 (C:\Users\dejwi\AppData\Roaming\MiKTeX\2.9\tex/latex/polski\ot4cmtt.fd
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-Overfull \hbox (46.66902pt too wide) in paragraph at lines 278--278
+Overfull \hbox (46.66902pt too wide) in paragraph at lines 327--327
 []\OT4/cmtt/m/n/12 ('/home/dawid/Pulpit/Variant_analysis_data/gnomad.exomes.r2.
 1.sites.chr21.vcf' ,'r')[] 
  []
 
-[12 <./VCF_1stline.PNG>] [13]
-(C:\Users\dejwi\OneDrive\Pulpit\Licencjat\build\Praca_Licencjacka.aux) ) 
+[14 <./VCF_1stline.PNG>]
+Underfull \hbox (badness 10000) in paragraph at lines 332--334
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 336--338
+
+ []
+
+[15]
+Overfull \hbox (546.84427pt too wide) in paragraph at lines 351--351
+[]\OT4/cmtt/m/n/12 School of Pharmacy, Centre for Biomolecular Sciences, Univer
+sity of Nottingham, University Park, Nottingham NG7 2RD, U.K)https://www.ncbi.n
+lm.nih.gov/pubmed/19021530[] 
+ []
+
+[16] (C:\Users\dejwi\OneDrive\Pulpit\Licencjat\build\Praca_Licencjacka.aux) ) 
 Here is how much of TeX's memory you used:
- 2635 strings out of 492897
- 38212 string characters out of 3142347
- 110982 words of memory out of 3000000
- 6499 multiletter control sequences out of 15000+200000
+ 2713 strings out of 492897
+ 39883 string characters out of 3142347
+ 110853 words of memory out of 3000000
+ 6570 multiletter control sequences out of 15000+200000
  13675 words of font info for 38 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,7n,32p,946b,225s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Use
-rs/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/pltt.enc}{C:/Users/dejwi
-/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plrm.enc}<D:/LaTeX/fonts/type1/p
-ublic/amsfonts/cm/cmsy10.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/t
-ype1/public/pl/plbx12.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/type
-1/public/pl/plr12.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/type1/pu
-blic/pl/plr17.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/type1/public
-/pl/pltt12.pfb>
+ 41i,7n,32p,946b,221s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C
+:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/pltt.enc}{C:/Users/
+dejwi/AppData/Roaming/MiKTeX/2.9/fonts/enc/dvips/pl/plrm.enc}<D:/LaTeX/fonts/ty
+pe1/public/amsfonts/cm/cmsy10.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fo
+nts/type1/public/pl/plbx12.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts
+/type1/public/pl/plr12.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/typ
+e1/public/pl/plr17.pfb><C:/Users/dejwi/AppData/Roaming/MiKTeX/2.9/fonts/type1/p
+ublic/pl/pltt12.pfb>
 Output written on C:\Users\dejwi\OneDrive\Pulpit\Licencjat\build\Praca_Licencja
-cka.pdf (13 pages, 107526 bytes).
+cka.pdf (16 pages, 116064 bytes).
 PDF statistics:
- 72 PDF objects out of 1000 (max. 8388607)
+ 81 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

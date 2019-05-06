@@ -8,12 +8,15 @@
 \usepackage{setspace}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{graphicx}
+\usepackage{ragged2e}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Parametry dokumentu
 \linespread{1.5}%1.5 odstêpu miedzy liniami
+\setlength{\parindent}{5pt}
+\setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
 
 
@@ -61,7 +64,7 @@ Data\hspace{10cm} Podpis opiekuna pracy
 
 \vspace{7cm} 
 
-\textbf{\fontsize{14}{14}\selectfont Oœwiadczenie autora pracy}
+\textbf{\fontsize{14}{14}\selectfont Oœwiadczenie autora pracy}\\
 Oœwiadczam, ¿e niniejsza praca dyplomowa zosta³a napisana przeze mnie samodzielnie i nie zawiera treœci uzyskanych w sposób niezgodny z obowi¹zuj¹cymi przepisami ani te¿ nie by³a wczeœniej przedmiotem procedur zwi¹zanych z uzyskaniem tytu³u zawodowego w wy¿szej uczelni.
 
 \vspace{3cm}
@@ -74,13 +77,15 @@ Data\hspace{10cm} Podpis opiekuna pracy
 \tableofcontents
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
+\justify
+\section{Wstêp}\indent
 
-\section{Wstêp}
 Zmiennoœæ genetyczna jest podstawowym mechanizmem ewolucyjnym wszystkich organizmów ¿ywych. Efektem takiej zmiennoœci s¹ ró¿nice w budowie bia³ek, przez co ich funkcji a tak¿e czasu i miejscu ich powstania, co mo¿e prowadziæ do powstania ró¿nic fenotypowych. Wiele z takich cech nie ma jednak znaczenia dla prze¿ycia organizmu. Rzadko takie zmiany mog¹ faworyzowaæ dany organizm w œrodowisku, co dalej prowadzi to rozpowszechnienia cechy a w efekcie do powstania nowego gatunku, który lepiej przystosowa³ siê do panuj¹cych warunków œrodowiska. \\
 Mimo to wiêkszoœæ takich zmian prowadzi do powstania ró¿nych chorób. Badanie zmiennoœci genetycznej cz³owieka, mo¿e daæ szansê na poznanie przyczyny ich wystêpowania. Przez badanie ró¿nic w kodzie genetycznym, zauwa¿a siê pewne wzory wystêpuj¹cych mutacji a pojawiania siê pewnych objawów chorobowych. Dziêki takiej wiedzy, przy zastosowaniu technik molekularnego badania genomu, mo¿na wykryæ mutacjê która zasz³a w DNA i podj¹æ odpowiednie kroki w celu leczenia objawów danej przypad³oœci.
 
 
-\subsection{Rodzaje mutacji i ich konsekwencje}
+\subsection{Rodzaje mutacji i ich konsekwencje}\indent
+
 Poruszane w tej pracy mutacje to:
 \begin{itemize}
 	\item SNP(ang. Single Nucleotide Polymorphism) - jest to mutacja polegaj¹ca na substytucji jednego nukleotyda. SNP stanowi¹ du¿¹ czêœæ ca³kowitej zmiennoœci genetycznej.
@@ -88,75 +93,109 @@ Poruszane w tej pracy mutacje to:
 	\item Delecja - antagonistyczna zmiana do insercji, polegaj¹ca na usuniêciu conajmniej jednego nukleotydu,
 \end{itemize}
 Wiêkszoœæ zaobserwowanych mutacji nie wywiera ¿adnego wp³ywu, poniewa¿ te negatywne najczêœciej s¹ letalne dla organizmu w zwi¹zku z czym nie wystêpuj¹ czêsto. W pracy zwrócono uwagê na 28 ró¿nych konsekwencji mutacji, które zostan¹ omówione poni¿ej.  
-\subsubsection{X5 UTR prime varaint i X3 prime UTR variant}
-S¹ to zmiany, które nie podlegaj¹ translacji ale s¹ zwi¹zane z jego kontrol¹. S¹ one po³o¿one terminalnie, po obu stronach regionu podlegaj¹cemu translacji, od strony 5' oraz 3'. Zmiany w tych sekwencjach powoduj¹ zmiany w strukturach mRNA, jego konformacji i budowy przestrzennej, które bior¹ udzia³ w kontroli translacji.
 
 
-\subsubsection{Downstream gene varaint i Upstream gene varaint}
-Mutacje w genach na niciach 5' i 3'
+\subsubsection{Mutacje zwi¹zane z ramk¹ odczytu}\indent
+Inframe deletion i Inframe insertion
+nie powoduje frameshifta ale zmienia bialko
 
-\subsubsection{Frameshift variant (ang. zmiana ramki odczytu)}
+Zmiana ramki odczytu (ang. Frameshift variant)
 S¹ to mutacje typu delecja lub insercja powoduj¹ce zaburzenia w procesie translacji. W zale¿noœci od miejsca zajœcia zamiany konsekwencj¹ mo¿e byæ ca³kowita zmiana ³añcucha polipeptydowego lub jego czêœci. Wywieraj¹ one bardzo du¿y wp³yw na bia³ko, poniewa¿ taki produkt najczêœciej nie jest w stanie pe³niæ przeznaczonej funkcji przez zmianê jego budowy lub d³ugoœci, w konsekwencji organizm nie jest w stanie produkowaæ bia³ka lub jego iloœæ jest niewystarczaj¹ca co ma wp³yw na ró¿ne szlaki metaboliczne i ¿ycie samego organizmu. Jednak¿e aby do tego dosz³o zmiana nie mo¿e dotyczyæ trzech lub wielokrotnoœci tej liczby, gdy¿ taka zmiana uwzglêdniaj¹c cechê kodu genetycznego jak¹ jest trójkowoœæ, czyli tworzenie przez trzy nukleotydy kodonu, nie spowoduje zmiany ramki odczytu a jedynie w bia³ku pojawi siê nieprawid³owa liczba aminokwasów, przy czym takie bia³ko mo¿e zachowaæ swoje w³aœciwoœci i funkcje.
 
 
-\subsubsection{Inframe deletion i Inframe insertion}
-??? poowduj¹ frameshift ???
 
 
-\subsubsection{Intron variant}
-Jest to zmiana pojawiaj¹ca siê w sekwencji niekoduj¹cej DNA. Takie mutacje nie wywieraj¹ lub wywieraj¹ wp³yw na organizm. Jak powszechnie wiadomo, introny s¹ wykorzystywane w genomie jako sekwencja reguluj¹ce transkrypcje, regiony zwi¹zane ze splicingiem
-\textbf{coœ chyba jeszcze}
-
-
-\subsubsection{Missense variant(ang. mutacja zmiany sensu)}
+\subsubsection{Mutacje missensowne done}\indent
+\begin{itemize}
+	\item Mutacja zmiany sensu(ang. missense variant) \\
 Zmiana mog¹ca prowadziæ do zmiany aminokwasu w syntetyzowanym bia³ku. W zale¿noœci od substytucji mutacja mo¿e nie powodowaæ zmiany funkcji i w³aœciwoœci posiadanych przez bia³ko (tzw. mutacja konserwatywna), poniewa¿ nowy aminokwas posiada zbli¿one w³aœciwoœci lub prowadziæ do dysfunkcji bia³ka(tzw. mutacja niekonserwatywna)w konsekwencji powstania chorób.
 
-
-\subsubsection{non coding transcript variant}
-brak info
-
-
-\subsubsection{non coding transcript exon variant}
+	\item Niekompletny kodon terminacyjny (ang. incomplete terminal codon varaint) \\
+Wariant sekwencji. w którym zmienia siê co najmniej jedn¹ zasadê koñcowego kodonu niekompletnie opisanego.
+\end{itemize}
 
 
-\subsubsection{regulatory region variant}
+ 
 
 
-\subsubsection{splice acceptor variant, splice region variant i splice donor varaint}
 
 
-\subsubsection{start lost, stop gained i stop lost}
+\subsubsection{regulatory region variant done?}\indent
+
+Wiêkszoœæ wariantów zwi¹zanych z fenotypem cz³owieka znajduje siê w intronach lub regionach miêdzy genowych, a wiêc musz¹ mieæ wp³yw na regulacje ekspresji genów. W sk³ad takich sekwencji wchodz¹ wzmacniacze, wyciszacze.... co jeszcze
 
 
-\subsubsection{synonymous varaint(ang. mutacja cicha}
-Jest to zmiana w jednego nukleotydy, który nie powoduje zmiany aminokwasu kodowanego przed triplet. Przyk³adem takiej mutacji jest zmiana CCC na CCU, w tym przypadku oba kodony odczytywane s¹ jako prolina. 
+\subsubsection{Mutacje zwi¹zane ze splicingiem}\indent
+
+Splicing, czyli sk³adanie genu jest wa¿nym procesem zachodz¹cym podczas dojrzewania mRNA, poprzez odpowiednie wycinanie intronów, a tak¿e eksonów podczas alternatywnego splicingu. Proces ten jest katalizowany przez kompleks bia³kowo-RNA, który nazywany jest spliceosomem. By intron podlega³ wyciêciu, musi posiadaæ dwie silnie konserwatywne sekwencjê: GU na koñcu 5' oraz AG na koñcu 3'. Mutacje tych miejsc mog¹ prowadziæ do powa¿nych konsekwencji dla organizmu. Kompleks mo¿e nie rozpoznaæ miejsca zachodzenia splicingu, w zwi¹zku z czym ekson nie zostanie poprawnie z³o¿ony, mo¿e utraciæ czêœæ ³añcucha, przez przedwczesne odczytanie kodonu STOP lub nienaturalnie siê wyd³u¿yæ. Miejsce splicingowe mo¿e zostaæ przesuniête, powoduj¹c zmianê ramki odczytu, delecjê lub insercjê wielu aminokwasów. 
+W przypadku zmiany w sekwencje akceptora(ang. splice acceptor variant) lub donora(ang. splice donor varaint) konsekwencje mutacji s¹ najpowa¿niejsze, poniewa¿ dotycz¹ konserwatywnych sekwencji otaczaj¹cych ekson.
+Natomiast wariant regionu splicingowego?(ang. splice region variant) dotyczy samych intronów oraz eksonów. Zajœcie mutacji w takich sekwencjach mo¿e skutkowaæ pojawieniem siê nowego miejsca splicingowego, przez co czêœæ intronu mo¿e zostaæ potraktowana jako ekson, a sam ekson mo¿e zostaæ uznany za intron. Na skutek insercji lub delecji zmieniona mo¿e zostaæ ramka odczytu eksonu, przez co produkt bia³kowy bêdzie posiada³ inne w³aœciwoœci. 
+
+\subsubsection{Mutacje zwi¹zane z miejscami inicjacji i terminacji translacji done}\indent
+
+W kodzie genetycznym wystêpuj¹ kodony odpowiadaj¹ce za terminacjê translacji: UGA, UAG i UAA. Napotkanie takiej trójki nukleotydowej przez rybosom, jest sygna³em do zakoñczenia procesu. W przypadku pojawienia siê zmian w kodzie jednego z tych kodonów w postaci substytucji, delecji lub insercji, ich funkcje terminacyjne mog¹ zostaæ utracone, przeniesione lub za wczeœnie zasygnalizuj¹ terminacje. Natomiast kodon AUG pe³ni podwójn¹ funkcje. Jest zarówno sygna³em inicjacji translacji a jednoczeœnie odczytywany jest przez rybosom jako aminokwas metionina. \\
+Wyró¿niane s¹ tutaj 4 rodzaje mutacji:
+\begin{itemize}
+	\item Mutacja kodonu STOP, nie zmieniaj¹ca jego funkcji (ang. stop retained variant) nie ma wp³ywu na translacje, poniewa¿ nie jest wa¿ne który z trójki nukleotydowej zostanie u¿yty do terminacji procesu. Przyk³adem takiej zmiany mo¿e byæ mutacja w kodonie UAG przez substytucje 3 nukleotydu czyli guaniny(G) na adeninê(A), w wyniku czego uzyskany kodon UAA dalej pe³ni funkcjê zakoñczenia translacji.
+	\item Zmiana powoduj¹ca utratê kodonu stop(ang. stop lost) powoduje nienaturalne wyd³u¿enie bia³ka a¿ do napotkania sygna³u terminacji w kodzie kolejnego bia³ka. Konsekwencj¹ takiej mutacji bêdzie dysfunkcja dwóch bia³ek.
+	\item Przeciwieñstwem do tego jest wariant typy pozyskania kodonu stop(ang. stop gained) w wyniku czego syntetyzowane bia³ko nie osi¹gnie oczekiwanej d³ugoœci i w³aœciwoœci lub powstan¹ dwa krótkie odcinki polipeptydowe, w przypadku gdy nastêpnym kodenem jest AUG(kodon inicjuj¹cy translacjê), które nie bêd¹ posiada³y biologicznej funkcji lub bêdzie ona zaburzona. 
+	\item Na skutek mutacji utraty kodonu start(ang. start lost) pominiêty zostanie ca³y fragment mRNA a¿ kompleks natrafi na kolejny sygna³ startu, który mo¿e byæ sk³adnikiem bia³ka, poniewa¿ AUG jest rozpoznawane równie¿ jako sygna³ do syntezy metioniny, w wyniku czego powstanie jedynie fragment docelowego bia³ka o w³aœciwoœciach bardziej lub mniej podobnych. W przeciwnym przypadku inicjacja rozpocznie siê dopiero gdy rybosom odczyta sygna³ inicjacji kolejnego produktu transkrypcji. 
+\end{itemize}
 
 
-\subsubsection{TF binding site variant}
+\subsubsection{Mutacje zwi¹zane z czynnikami transkrypcyjnymi done?}\indent
+
+Warianty sekwencji wi¹¿¹cych czynniki transkrypcyjne(ang. TF binding site varaint) \\
+W genomie ka¿dego organizmu znajduj¹ siê specyficzne sekwencje, do których przy³¹czaj¹ siê czynniki transkrypcyjne(ang. TF - transcription factor). S¹ to tak zwane sekwencje  promotorowe, które warunkuj¹ miejsce startu transkrypcji. Mutacje w obrêbie tych sekwencji mog¹ prowadziæ to zmniejszenia lub ca³kowitego zaprzestania ekspresji danego genu, poniewa¿ czynnik transkrypcyjny nie rozpozna charakterystycznej sekwencji DNA, i w konsekwencji tego nie dojdzie do procesu transkrypcji i dalej translacji.\indent
+
+TFBS ablation\\
+Jest to rodzaj delecji, która zawiera regiony zwi¹zane z przy³¹czaniem siê czynników transkrypcyjnych. Podobnie jak w przypadku zmian sekwencji wi¹¿¹cych czynniki transkrypcyjne, usuniêcie ich powoduje zmianê ekspresji danego genu.
 
 
-\subsubsection{coding sequence varaint}
+
+\subsubsection{coding sequence varaint}\indent
 
 
-\subsubsection{incomplete terminal codon varaint}
 
 
-\subsubsection{protein altering varaint}
+
+\subsubsection{protein altering varaint}\indent
 
 
-\subsubsection{stop retained variant}
+\subsubsection{Mutacje ciche}
+\begin{itemize}
+	\item intergenetic variant
+	
+	\item Downstream gene varaint i Upstream gene varaint
+	
+	\item Intron variant -
+	Jest to zmiana pojawiaj¹ca siê w sekwencji niekoduj¹cej DNA. Takie mutacje nie wywieraj¹ lub wywieraj¹ wp³yw na organizm. Jak powszechnie wiadomo, introny s¹ wykorzystywane w genomie jako sekwencja reguluj¹ce transkrypcje, regiony zwi¹zane ze splicingiem
+	
+	\item X5 UTR prime varaint i X3 prime UTR variant done? \\
+S¹ to zmiany, które nie podlegaj¹ translacji ale s¹ zwi¹zane z jego kontrol¹. S¹ one po³o¿one terminalnie, po obu stronach regionu podlegaj¹cemu translacji, od strony 5' oraz 3'. Zmiany w tych sekwencjach powoduj¹ zmiany w strukturach mRNA, jego konformacji i budowy przestrzennej, które bior¹ udzia³ w kontroli translacji.
+\textbf{coœ jeszcze}
+
+	\item non coding transcript varaint
+	
+	\item non coding transcript exon varaint
+	
+	\item synonymous varaint(ang. mutacja cicha)
+
+Jest to zmiana jednego nukleotydu, który nie powoduje zmiany aminokwasu kodowanego przez triplet. Przyk³adem takiej mutacji jest zmiana CCC na CCU, w tym przypadku oba kodony odczytywane s¹ jako prolina. 
+
+\end{itemize}
+
+\subsubsection{Warianty dojrza³êgo miRNA(ang. mature miRNA variant) done?}\indent
+
+miRNA lub microRNA jest to ma³y fragment niekoduj¹cego RNA zawieraj¹cy do 22 nukleotydów.  Jest integraln¹ czêœci¹ ekspresji mRNA, wp³ywaj¹c na ni¹ przez obni¿anie jej poziomu.  Dzia³aj¹ poprzez komplementarne ³¹czenie siê z okreœlonymi sekwencjami na mRNA a w efekcie rozerwanie nici mRNA lub jego destabilizacje poprzez skrócenie ogonu poli (A). Zmiany w ci sekwencji mog¹ powodowaæ hamowanie translacji bia³ek, które docelowo nie mia³y nimi  byæ lub dojdzie do nadekspresji jednego z bia³ek.
 
 
-\subsubsection{mature miRNA variant}
 
 
-\subsubsection{TFBS ablation}
 
 
-\subsubsection{intergenetic variant}
+\subsubsection{transcript ablation}\indent
 
-
-\subsubsection{transcript ablation}
 
 \newpage
 \subsubsection{Konsekwencja mutacji a wp³yw na produkt}
@@ -193,31 +232,38 @@ intergenic variant & Œredni\\
 transcript ablation & Wysoki\\ 
 \end{tabular}
 \end{center}
-\subsection{Cel pracy}
+\subsection{Cel pracy}\indent
+
 Celem pracy jest analiza zmiennoœci genetycznej cz³owieka. Praca omawia zale¿noœci pomiêdzy iloœci¹ wariantów a ich lokalizacj¹ w kariotypie oraz konsekwencj¹ mutacji, a tak¿e rozwa¿ania na temat samych konsekwencji mutacji. Przedstawione zostan¹ rodzaje konsekwencji, jakie wywieraj¹ zmiany w DNA oraz dlaczego niektóre mutacje s¹ akceptowane przez organizm a inne powoduj¹ jego œmieræ. 
 
 
-\subsection{Baza danych}
+\subsection{Baza danych}\indent
+
 Niniejsza praca oparta jest na zestawie danych pochodz¹cych z gnomAD(genome aggregation database). Jest to baza danych opracowana przez miêdzynarodow¹ koalicjê badaczy, w celu agregowania i ujednolicenia danych dotycz¹cych szerokiej gamy projektów sekwencjonowania genomu oraz udostêpniania tych danych dla spo³ecznoœci naukowej. \\
 \vspace{0.5cm}
 Baza danych obejmuje 125 748 sekwencji egzomowych oraz 15 708 sekwencji ca³ego genomu od niepowi¹zanych osobników zsekwencjonowanych w ramach ró¿nych badañ genetycznych specyficznych dla choroby i populacji.
 
+\indent
 U¿yty zestaw danych zawiera informacje o wariancjach z 22 chromosomów autosomalnych, oraz zawiera 119794797 indywidualnych rekordów. Dostarczaj¹ one informacji o miejscu wyst¹pienia danej mutacji, czyli chromosomie i jego pozycji w nim, porównuje zmieniony fragment z prób¹ kontroln¹, a tak¿e dostarcza informacji o jego frekwencji i iloœci z jak¹ wystêpowa³ podczas tworzenia bazy. 
 
 
-\subsection{U¿yte oprogramowanie?}
+\subsection{U¿yte oprogramowanie?}\indent
 
-\section{Przetwarzanie danych}
+
+\section{Przetwarzanie danych}\indent
+
 Variant Call Format(VCF) jest to unikalny format plików tekstowych u¿ywany w bioinformatyce do przechowywania danych genomu dotycz¹cych mutacji. Format zosta³ opracowany wraz z rozpoczêciem projektów sekwencjonowania genomów na du¿¹ skalê, takich jak 1000 Genomes Project. 
 
-\subsection{Specyfikacja formatu VCF}
-Nag³ówek rozpoczyna plik i opisuje jego zawartoœæ. Linie nag³ówka s¹ oznaczone jako \# . Specjalne s³owa kluczowe w nag³ówku s¹ oznaczone {\# \#} . Zawieraj¹ one informacje o pochodzeniu pliku, gatunku oraz objaœniaj¹ u¿yte w nim skróty.
+\subsection{Specyfikacja formatu VCF}\indent
+
+Nag³ówek rozpoczyna plik i opisuje jego zawartoœæ. Linie nag³ówka s¹ oznaczone jako {\#}. Specjalne s³owa kluczowe w nag³ówku s¹ oznaczone {\# \#}. Zawieraj¹ one informacje o pochodzeniu pliku, gatunku oraz objaœniaj¹ u¿yte w nim skróty.
 \begin{figure}[!htbp] 
   \centering
     \includegraphics[scale=0.66]{VCF_header.PNG}
     \caption{Fragment nag³ówka z u¿ytego zestawu danych}
 \end{figure}
 
+\begin{center}
 \begin{tabular}{|c|c|c|}
  \hline
  &Nazwa&Krótki opis.\\  \hline
@@ -229,12 +275,13 @@ Nag³ówek rozpoczyna plik i opisuje jego zawartoœæ. Linie nag³ówka s¹ oznaczone j
 6&QUAL&Wynik jakoœci allelu?  \\  \hline
 7&FILTER&Zawiera informacje na temat których filtrów dany rekord nie przeszed³. \\  \hline
 8&INFO&Lista zawieraj¹ca zastawy klucz-wartoœæ, opisuj¹ca wariant. \\  \hline
-\end{tabular} \\
+\end{tabular}\\
+\end{center} 
+
 \vspace{1cm}
 
 Pole info zawiera szczegó³owe informacje rekordu.
 Wykorzystane w pracy kategorie to:
-
 AC=3, liczba alleli w genotypach
 AN=2654, ca³kowita liczba alleli w u¿ytych genotypach
 AF=1.13037e-03, czêstoœæ wystêpowania danego allelu
@@ -247,12 +294,14 @@ Konsekwencja mutacji, wp³yw na produkt, identyfikatory dla biologicznych baz dan
     \caption{Fragment pliku przedstawiaj¹cy dane}
 \end{figure}
 
-\subsection{Przetwarzanie pliku}
+\subsection{Przetwarzanie pliku}\indent
+
 Z racji du¿ego rozmiaru pliku oraz zawartoœci niepotrzebnych informacji, plik ten musia³ zostaæ odpowiednio przygotowany zanim zostanie u¿yty do przeprowadzenia analizy. \\ 
 W tym celu zosta³ stworzony krótki skrypt w Pythonie, którego zadaniem by³a ekstrakcja kluczowych dla analizy danych.
 
 
 \subsection{Kod skryptu u¿ytego do wydobycia danych}
+potrzebne?
 \begin{verbatim}
 with open
 ('/home/dawid/Pulpit/Variant_analysis_data/gnomad.exomes.r2.1.sites.chr21.vcf' ,'r')
@@ -287,10 +336,18 @@ wykres2 \\
 wykres1 \\
 wykres2 \\
 
+\newpage
 \section{Bibliografia}
 \begin{verbatim}
 https://en.wikipedia.org/wiki/Variant_Call_Format
 https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5635616/
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4445073/
+https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4797991/
+(How do microRNAs regulate gene expression?
+Ian G. Cannell1, Yi Wen Kong1 and Martin Bushell2
+School of Pharmacy, Centre for Biomolecular Sciences, University of Nottingham, University Park, Nottingham NG7 2RD, U.K)https://www.ncbi.nlm.nih.gov/pubmed/19021530
+https://onlinelibrary.wiley.com/doi/abs/10.1002/wrna.1451
 \end{verbatim}
 
 \end{document}
