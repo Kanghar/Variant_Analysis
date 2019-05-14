@@ -1,36 +1,40 @@
 #Variant_analysis
 
 #Wczytywanie_pliku
-library("plyr")
+setwd("X:/Variant_analysis_data")
+library("dplyr")
 library("tidyr")
 library("ff")
 library("ggplot2")
 library(reshape2)
 library(scales)
 library(wesanderson)
-library(biglm)
-library(ffbase)
+
+
 #ktory_plik_do_czego
 #gnomad_all_chromo_2 -  tylko z 1 rodzajem wariantu
-#gnomad_new_cat_2 - zredukowane warianty
+#gnomad_new_cat_2 - zredukowane warianty(wszystkie)
 
-#wszystkie_warianty
-gnomad_all_chromo <- read.csv.ffdf(file="gnomad_all_chromo_2.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
+#plik_testowy
+gnomad_all_chromo <- read.csv.ffdf(file="test_file2.txt",sep=',', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
 
-#warianty_bia³kowe
+
+
+#kategoryzowane_warianty_bia³kowe
 gnomad_all_chromo <- read.csv.ffdf(file="gnomad_new_cat_2.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
 
+#kategoryzowane_warianty_variant_count
+gnomad_all_chromo <- read.csv.ffdf(file="gnomad_new_cat_3.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
 
 
+
+
+names(gnomad_all_chromo) <- c('Chrom','Pos','Ref','Alt','AC','AN','AF','Variant','Impact','gene','ens_gene','Feature','ens_trans','mutation','num')
+
+names(z) <- c('Chrom','Pos','Ref','Alt','AC','AN','AF','Variant','Impact','gene','ens_gene','Feature','ens_trans','mutation','num')
 #TABELE
-#tabela z AN
-table <- read.table('table_AN_2.csv', sep=',', head=TRUE) 
-table2 <- melt(table, id.vars = 'Chromosom')
 
-
-#tabela z AF_AN - rzadkie warianty < 0.01
-table_AN_AF <- read.table('table_AF_AN_2.csv', sep='\t', head=FALSE) 
-names(table_AN_AF) = c("Chromosom","Wariant","AF","AN")
+z = as.data.frame(cbind(gnomad_all_chromo[,1],gnomad_all_chromo[,7]))
 
 #Tworzenie tabeli z iloœcia wariantów
 variant_table <- table(gnomad_all_chromo[,1],gnomad_all_chromo[,8])
@@ -44,100 +48,72 @@ table <- read.table('table_AN_full_cutted_2.csv', sep=',', head=TRUE)
 table2 <- melt(table, id.vars = 'Chromosom')
 names(table2) = c("Chromosom","Wariant","AN")
 
-#
-#table <- read.table('table_AN_2.csv', sep=',', head=TRUE)
-#table2 <- melt(table, id.vars = 'Chromosom')
-#names(table2) = c("Chromosom","Wariant","AN")
 
-#przetwarzanie danych dla AF<0.01 
-table3 = merge(mean_freq, table2, by=c("Chromosom","Wariant")) #najpierw wygenerowac table2(AN) i mean_freq(AF)
-write.table(table3, file = "table_AF_AN.csv", sep = "\t",row.names = F,col.names = F) 
-
-#tabela_z_wszystkimi_wariatami_other
-table_AN <- read.table('table_AN_all_variants_other.csv', sep=',', head=TRUE) 
-table_AN_2 <- melt(table_AN, id.vars = 'Chromosom')
-names(table_AN_2) <- c('Chromosom','Wariant','AN')
-
-
-#Formatowanie_kolumn
-names(gnomad_all_chromo)[1] <- "Chromosom"
-names(gnomad_all_chromo)[6] <- "AN"
-names(gnomad_all_chromo)[7] <- "AF"
-names(gnomad_all_chromo)[8] <- "Variant"
-
-#Data_frame
+#AF_mean
 mean_freq <- aggregate(gnomad_all_chromo[,7],list(gnomad_all_chromo[,1],gnomad_all_chromo[,8]),mean)
 names(mean_freq)[1]<-"Chromosom"
 names(mean_freq)[2]<-"Wariant"
 names(mean_freq)[3]<-"Frekwencja"
 
+#Varaint_count
+variant_count <- aggregate(gnomad_all_chromo[,15],by=list(gnomad_all_chromo[,8],gnomad_all_chromo[,1]),FUN='sum')
+names(variant_count) <- c('Variant','Chromosome','Count')
 
-table3 = merge(mean_freq, table2, by=c("Chromosom","Wariant"))
+#AF_count
 
-allel_number <- aggregate(gnomad_all_chromo[,6],list(gnomad_all_chromo[,8]),sum)
-names(allel_number)[1]<-"Wariant"
-names(allel_number)[2]<-"Ilosc"
+AF_count <- aggregate(gnomad_all_chromo[,15],by=list(gnomad_all_chromo[,7],gnomad_all_chromo[,1]),FUN='sum')
+names(AF_count) <- c('AF','Chromosome','Count')
+names(z1) <- c('Chromosome','AF','Count')
 
+z = gnomad_all_chromo[which(gnomad_all_chromo[,1]=='2'),]
+z1 = cbind(z[,1],z[,7],z[15])
 
-#srednia AF z ca³ego genomu
-
-mean_freq_whole_genome <- aggregate(gnomad_all_chromo[,7],list(gnomad_all_chromo[,1],gnomad_all_chromo[,8]),sum)
-names(mean_freq_whole_genome)[1]<-"Chromosom"
-names(mean_freq_whole_genome)[2]<-"Wariant"
-names(mean_freq_whole_genome)[3]<-"Frekwencja"
-mean_freq_whole_genome$Frekwencja = mean_freq_whole_genome$Frekwencja/dim(gnomad_all_chromo)[1]
-
-
+AF_count <- aggregate(z1[,3],by=list(z1[,2],z1[,1]),FUN='sum')
+names(AF_count) <- c('AF','Chromosome','Count')
+#119794797 gnomad_new_cat_2.txt
 
 
 
 #WYKRESY
 
 #BAR_PLOTS
-#AN
-ggplot(table2,aes(x = Chromosom, y = AN, fill = Wariant)) + geom_bar(stat = "identity", colour = "black") + xlab("\nChromosom") + ylab("Liczba_wariantów\n") + guides(fill=guide_legend(title="Rodzaj wariantu")) + scale_x_continuous(breaks=1:22) 
+#variant_count
+ggplot(variant_count,aes(x = Chromosome, y = Count, fill = Variant)) + geom_bar(stat = "identity", colour = "black") + xlab("\nChromosom") + ylab("Liczba_wariantów\n") + guides(fill=guide_legend(title="Rodzaj wariantu")) + scale_x_continuous(breaks=1:22) 
 
-ggplot(table2,aes(x = Chromosom, y = AN, fill = Wariant)) + geom_bar(position = "fill",stat = "identity",colour = "black") + scale_y_continuous(labels = percent_format()) + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Liczba_wariantów(w %)\n") + scale_x_continuous(breaks=1:22) 
+ggplot(variant_count,aes(x = Chromosome, y = Count, fill = Variant)) + geom_bar(position = "fill",stat = "identity",colour = "black") + scale_y_continuous(labels = percent_format()) + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Liczba_wariantów(w %)\n") + scale_x_continuous(breaks=1:22) 
+
+#violin_plot
+ggplot(z, aes(x = Chrom, y = AF)) + 
+  geom_violin()
+
+ggplot(z1, aes(Chromosome, AF)) + geom_violin(aes(fill = Chromosome))  + ylim(0, 0.0075)
+
+ggplot(AF_count, aes(Chromosome, AF)) + geom_violin(aes(fill = Count)) + ylim(0, 0.001)
 
 #AN_other
 ggplot(table_AN_2,aes(x = Chromosom, y = AN, fill = Wariant)) + geom_bar(stat = "identity", colour = "black") + xlab("\nChromosom") + ylab("Liczba_wariantów\n") + guides(fill=guide_legend(title="Rodzaj wariantu")) + scale_x_continuous(breaks=1:22) 
 
 ggplot(table_AN_2,aes(x = Chromosom, y = AN, fill = Wariant)) + geom_bar(position = "fill",stat = "identity",colour = "black") + scale_y_continuous(labels = percent_format()) + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Liczba_wariantów(w %)\n") + scale_x_continuous(breaks=1:22) 
 
+
+
+
+
 #AN_other_prot
 ggplot(table_other,aes(x = Chromosom, y = AN, fill = Wariant)) + geom_bar(stat = "identity", colour = "black") + xlab("\nChromosom") + ylab("Liczba_wariantów\n") + guides(fill=guide_legend(title="Rodzaj wariantu")) 
 
 ggplot(table_other,aes(x = Chromosom, y = AN, fill = Wariant)) + geom_bar(position = "fill",stat = "identity",colour = "black") + scale_y_continuous(labels = percent_format()) + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Liczba_wariantów(w %)\n") + scale_x_continuous(breaks=1:22) 
 
+
+
+
+
 #Stacked_bar_AF
 ggplot(mean_freq,aes(x = Chromosom, y = Frekwencja, fill = Wariant)) + geom_bar(position = "fill",stat = "identity",colour = "black")  + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Frekwencja\n") + scale_x_continuous(breaks=1:22) 
-
-#rare_wariats_<_0.01 
-ggplot(table_AN_AF,aes(x = Chromosom, y = AN, fill = Wariant)) + geom_bar(stat = "identity", colour = "black") + xlab("\nChromosom") + ylab("Liczba_wariantów\n") + guides(fill=guide_legend(title="Rodzaj wariantu")) + scale_x_continuous(breaks=1:22) 
-
-#Stacked_bar_AF_whole_genome_mean
-ggplot(mean_freq_whole_genome,aes(x = Chromosom, y = Frekwencja, fill = Wariant)) + geom_bar(position = "fill",stat = "identity",colour = "black")  + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Frekwencja\n") + scale_x_continuous(breaks=1:22) 
-
-ggplot(data=allel_number, aes(x=Wariant, y=Ilosc)) + geom_bar(stat="identity",fill = "#265fe2") + geom_text(aes(label = Ilosc,vjust=-1)) + theme(axis.text.x = element_text(angle = 45, hjust = 1))
-
-#brzydkie
-ggplot(mean_freq,aes(x = Chromosom, y = Frekwencja)) + geom_bar(stat = "identity", fill = "#265fe2") + xlab("\nChromosom") + ylab("Frekwencja(w %)\n") + scale_y_continuous(labels = percent_format())
-#nie_³adne
-ggplot(mean_allel_number,aes(x = Chromosom, y = value)) + geom_bar(stat = "identity", fill = "#265fe2") + xlab("\nChromosom") + ylab("Œrednia iloœæ przebadanych alleli\n")
-
-ggplot(data=mean_allel_number, aes(x=Chromosom, y=value, fill=Wariant)) +
-  geom_bar(stat = "identity",colour = "black") + scale_x_continuous(breaks=1:22) 
 
 #AF_bar
 ggplot(data=mean_freq, aes(x=Chromosom, y=Frekwencja, fill=Wariant)) +
   geom_bar(stat = "identity",colour = "black") + scale_x_continuous(breaks=1:22) 
   
 
-names(gnomad_all_chromo[1])
-names(gnomad_all_chromo) <- c('Chrom','Pos','Ref','Alt','AC','AN','AF','Variant','Impact','Gene_ID','Ens_Gene_ID','Unknown','Ens_trans','SNV')
-
-#linear_model
-lm = bigglm(AN~Chrom+Variant,data=gnomad_all_chromo,chunksize=50000)
-
-#aov = aov(AN~Chromosom+Wariant,data=gnomad_all_chromo)
 
