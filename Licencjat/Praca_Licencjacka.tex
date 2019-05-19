@@ -2,19 +2,20 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Package
+\usepackage[utf8]{inputenc}  
 \usepackage{polski}
-\usepackage[cp1250]{inputenc}
 \usepackage{fancyvrb}
 \usepackage{setspace}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage{ragged2e}
+\usepackage{float}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %Parametry dokumentu
-\linespread{1.5}%1.5 odstêpu miedzy liniami
+\linespread{1.5}%1.5 odstÄ™pu miedzy liniami
 \setlength{\parindent}{5pt}
 \setlength{\parskip}{1ex plus 0.5ex minus 0.2ex}
 
@@ -23,8 +24,8 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \begin{document}
 \centering
-{\fontsize{20}{20}\selectfont Uniwersytet Przyrodniczy we Wroc³awiu}\\
-{\fontsize{18}{18}\selectfont Wydzia³ Biologii i Hodowli Zwierz¹t}\\
+{\fontsize{20}{20}\selectfont Uniwersytet Przyrodniczy we WrocÅ‚awiu}\\
+{\fontsize{18}{18}\selectfont WydziaÅ‚ Biologii i Hodowli ZwierzÄ…t}\\
 {\fontsize{16}{16}\selectfont Kierunek: Bioinformatyka}\\
 {\fontsize{16}{16}\selectfont Studia stacjonarne pierwszego stopnia}\\
 
@@ -35,7 +36,7 @@
 
 \vspace{2.5cm}
 
-\textbf{\fontsize{24}{24}\selectfont Analiza zmiennoœci genetycznej cz³owieka na podstawie danych z sekwencjonowania nowej generacji}\\
+\textbf{\fontsize{24}{24}\selectfont Analiza zmiennoÅ›ci genetycznej czÅ‚owieka na podstawie danych z sekwencjonowania nowej generacji}\\
 {\fontsize{18}{18}\selectfont Analysis of human genetic variability based on data from next-generation sequencing}\\
 
 \vspace{3cm}
@@ -47,7 +48,7 @@
 
 \vspace{2cm}
 \centering
-{\fontsize{14}{14}\selectfont Wroc³aw, 2019}\\  
+{\fontsize{14}{14}\selectfont WrocÅ‚aw, 2019}\\  
 
 \newpage
  
@@ -55,8 +56,8 @@
 
 \flushleft
 \vspace{10cm} 
-\textbf{\fontsize{14}{14}\selectfont Oœwiadczenie opiekuna pracy} \\
-Oœwiadczam, ¿e niniejsza praca zosta³a przygotowana pod moim kierownictwem i stwierdzam, ¿e spe³nia ona warunki do przedstawienia jej w postêpowaniu o nadanie tytu³u zawodowego.
+\textbf{\fontsize{14}{14}\selectfont OÅ›wiadczenie opiekuna pracy} \\
+OÅ›wiadczam, Å¼e niniejsza praca zostaÅ‚a przygotowana pod moim kierownictwem i stwierdzam, Å¼e speÅ‚nia ona warunki do przedstawienia jej w postÄ™powaniu o nadanie tytuÅ‚u zawodowego.
 
 \vspace{3cm}
 
@@ -64,8 +65,8 @@ Data\hspace{10cm} Podpis opiekuna pracy
 
 \vspace{7cm} 
 
-\textbf{\fontsize{14}{14}\selectfont Oœwiadczenie autora pracy}\\
-Oœwiadczam, ¿e niniejsza praca dyplomowa zosta³a napisana przeze mnie samodzielnie i nie zawiera treœci uzyskanych w sposób niezgodny z obowi¹zuj¹cymi przepisami ani te¿ nie by³a wczeœniej przedmiotem procedur zwi¹zanych z uzyskaniem tytu³u zawodowego w wy¿szej uczelni.
+\textbf{\fontsize{14}{14}\selectfont OÅ›wiadczenie autora pracy}\\
+OÅ›wiadczam, Å¼e niniejsza praca dyplomowa zostaÅ‚a napisana przeze mnie samodzielnie i nie zawiera treÅ›ci uzyskanych w sposÃ³b niezgodny z obowiÄ…zujÄ…cymi przepisami ani teÅ¼ nie byÅ‚a wczeÅ›niej przedmiotem procedur zwiÄ…zanych z uzyskaniem tytuÅ‚u zawodowego w wyÅ¼szej uczelni.
 
 \vspace{3cm}
 
@@ -78,141 +79,104 @@ Data\hspace{10cm} Podpis opiekuna pracy
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
 \justify
-\section{Wstêp}\indent
+\section{WstÄ™p}\indent
 
-Zmiennoœæ genetyczna jest podstawowym mechanizmem ewolucyjnym wszystkich organizmów ¿ywych. Efektem takiej zmiennoœci s¹ ró¿nice w budowie bia³ek, przez co ich funkcji a tak¿e czasu i miejscu ich powstania, co mo¿e prowadziæ do powstania ró¿nic fenotypowych. Wiele z takich cech nie ma jednak znaczenia dla prze¿ycia organizmu. Rzadko takie zmiany mog¹ faworyzowaæ dany organizm w œrodowisku, co dalej prowadzi to rozpowszechnienia cechy a w efekcie do powstania nowego gatunku, który lepiej przystosowa³ siê do panuj¹cych warunków œrodowiska. \\
-Mimo to wiêkszoœæ takich zmian prowadzi do powstania ró¿nych chorób. Badanie zmiennoœci genetycznej cz³owieka, mo¿e daæ szansê na poznanie przyczyny ich wystêpowania. Przez badanie ró¿nic w kodzie genetycznym, zauwa¿a siê pewne wzory wystêpuj¹cych mutacji a pojawiania siê pewnych objawów chorobowych. Dziêki takiej wiedzy, przy zastosowaniu technik molekularnego badania genomu, mo¿na wykryæ mutacjê która zasz³a w DNA i podj¹æ odpowiednie kroki w celu leczenia objawów danej przypad³oœci.
+ZmiennoÅ›Ä‡ genetyczna jest podstawowym mechanizmem ewolucyjnym wszystkich organizmÃ³w Å¼ywych. Efektem takiej zmiennoÅ›ci sÄ… rÃ³Å¼nice w budowie biaÅ‚ek, przez co ich funkcji a takÅ¼e czasu i miejscu ich powstania, co moÅ¼e prowadziÄ‡ do powstania rÃ³Å¼nic fenotypowych. Wiele z takich cech nie ma jednak znaczenia dla przeÅ¼ycia organizmu. Rzadko takie zmiany mogÄ… faworyzowaÄ‡ dany organizm w Å›rodowisku, co dalej prowadzi to rozpowszechnienia cechy a w efekcie do powstania nowego gatunku, ktÃ³ry lepiej przystosowaÅ‚ siÄ™ do panujÄ…cych warunkÃ³w Å›rodowiska. \\
+Mimo to wiÄ™kszoÅ›Ä‡ takich zmian prowadzi do powstania rÃ³Å¼nych chorÃ³b. Badanie zmiennoÅ›ci genetycznej czÅ‚owieka, moÅ¼e daÄ‡ szansÄ™ na poznanie przyczyny ich wystÄ™powania. Przez badanie rÃ³Å¼nic w kodzie genetycznym, zauwaÅ¼a siÄ™ pewne wzory wystÄ™pujÄ…cych mutacji a pojawiania siÄ™ pewnych objawÃ³w chorobowych. DziÄ™ki takiej wiedzy, przy zastosowaniu technik molekularnego badania genomu, moÅ¼na wykryÄ‡ mutacjÄ™ ktÃ³ra zaszÅ‚a w DNA i podjÄ…Ä‡ odpowiednie kroki w celu leczenia objawÃ³w danej przypadÅ‚oÅ›ci.
 
 
 \subsection{Rodzaje mutacji i ich konsekwencje}\indent
 
 Poruszane w tej pracy mutacje to:
 \begin{itemize}
-	\item SNP(ang. Single Nucleotide Polymorphism) - jest to mutacja polegaj¹ca na substytucji jednego nukleotyda. SNP stanowi¹ du¿¹ czêœæ ca³kowitej zmiennoœci genetycznej.
-	\item Insercja - polega na wstawieniu krótkiego fragmentu nukleotydów lub przynajmniej jednego nukleotydu. 
-	\item Delecja - antagonistyczna zmiana do insercji, polegaj¹ca na usuniêciu conajmniej jednego nukleotydu,
+	\item SNP(ang. Single Nucleotide Polymorphism) - jest to mutacja polegajÄ…ca na substytucji jednego nukleotyda. SNP stanowiÄ… duÅ¼Ä… czÄ™Å›Ä‡ caÅ‚kowitej zmiennoÅ›ci genetycznej.
+	\item Insercja - polega na wstawieniu krÃ³tkiego fragmentu nukleotydÃ³w lub przynajmniej jednego nukleotydu. 
+	\item Delecja - antagonistyczna zmiana do insercji, polegajÄ…ca na usuniÄ™ciu conajmniej jednego nukleotydu,
 \end{itemize}
-Wiêkszoœæ zaobserwowanych mutacji nie wywiera ¿adnego wp³ywu, poniewa¿ te negatywne najczêœciej s¹ letalne dla organizmu w zwi¹zku z czym nie wystêpuj¹ czêsto. W pracy zwrócono uwagê na 28 ró¿nych konsekwencji mutacji, które zostan¹ omówione poni¿ej.  
-
-
-\subsubsection{Mutacje zwi¹zane z ramk¹ odczytu}\indent
-Inframe deletion i Inframe insertion
-nie powoduje frameshifta ale zmienia bialko
-
-Zmiana ramki odczytu (ang. Frameshift variant)
-S¹ to mutacje typu delecja lub insercja powoduj¹ce zaburzenia w procesie translacji. W zale¿noœci od miejsca zajœcia zamiany konsekwencj¹ mo¿e byæ ca³kowita zmiana ³añcucha polipeptydowego lub jego czêœci. Wywieraj¹ one bardzo du¿y wp³yw na bia³ko, poniewa¿ taki produkt najczêœciej nie jest w stanie pe³niæ przeznaczonej funkcji przez zmianê jego budowy lub d³ugoœci, w konsekwencji organizm nie jest w stanie produkowaæ bia³ka lub jego iloœæ jest niewystarczaj¹ca co ma wp³yw na ró¿ne szlaki metaboliczne i ¿ycie samego organizmu. Jednak¿e aby do tego dosz³o zmiana nie mo¿e dotyczyæ trzech lub wielokrotnoœci tej liczby, gdy¿ taka zmiana uwzglêdniaj¹c cechê kodu genetycznego jak¹ jest trójkowoœæ, czyli tworzenie przez trzy nukleotydy kodonu, nie spowoduje zmiany ramki odczytu a jedynie w bia³ku pojawi siê nieprawid³owa liczba aminokwasów, przy czym takie bia³ko mo¿e zachowaæ swoje w³aœciwoœci i funkcje.
+WiÄ™kszoÅ›Ä‡ zaobserwowanych mutacji nie wywiera Å¼adnego wpÅ‚ywu, poniewaÅ¼ te negatywne najczÄ™Å›ciej sÄ… letalne dla organizmu w zwiÄ…zku z czym nie wystÄ™pujÄ… czÄ™sto. W pracy zwrÃ³cono uwagÄ™ na 28 rÃ³Å¼nych konsekwencji mutacji, ktÃ³re zostaÅ‚y kategoryzowane wedÅ‚ug bazy The Sequence Ontology. 
 
 
 
+\subsubsection{Warianty splicingowe} \indent 
 
-\subsubsection{Mutacje missensowne done}\indent
+\indent Splicing, czyli skÅ‚adanie genu jest waÅ¼nym procesem zachodzÄ…cym podczas dojrzewania mRNA, poprzez odpowiednie wycinanie intronÃ³w, a takÅ¼e eksonÃ³w podczas alternatywnego splicingu. Proces ten jest katalizowany przez kompleks biaÅ‚kowo-RNA, ktÃ³ry nazywany jest spliceosomem. By intron podlegaÅ‚ wyciÄ™ciu, musi posiadaÄ‡ dwie silnie konserwatywne sekwencjÄ™: GU na koÅ„cu 5' oraz AG na koÅ„cu 3'. Mutacje tych miejsc mogÄ… prowadziÄ‡ do powaÅ¼nych konsekwencji dla organizmu. Kompleks moÅ¼e nie rozpoznaÄ‡ miejsca zachodzenia splicingu, w zwiÄ…zku z czym ekson nie zostanie poprawnie zÅ‚oÅ¼ony, moÅ¼e utraciÄ‡ czÄ™Å›Ä‡ Å‚aÅ„cucha, przez przedwczesne odczytanie kodonu STOP lub nienaturalnie siÄ™ wydÅ‚uÅ¼yÄ‡. Miejsce splicingowe moÅ¼e zostaÄ‡ przesuniÄ™te, powodujÄ…c zmianÄ™ ramki odczytu, delecjÄ™ lub insercjÄ™ wielu aminokwasÃ³w. 
+W przypadku zmiany w sekwencje akceptora(ang. splice acceptor variant) lub donora(ang. splice donor varaint) konsekwencje mutacji sÄ… najpowaÅ¼niejsze, poniewaÅ¼ dotyczÄ… konserwatywnych sekwencji otaczajÄ…cych ekson. \\
+\indent Natomiast wariant regionu splicingowego(ang. splice region variant) dotyczy samych intronÃ³w oraz eksonÃ³w. ZajÅ›cie mutacji w takich sekwencjach moÅ¼e skutkowaÄ‡ pojawieniem siÄ™ nowego miejsca splicingowego, przez co czÄ™Å›Ä‡ intronu moÅ¼e zostaÄ‡ potraktowana jako ekson, a sam ekson moÅ¼e zostaÄ‡ uznany za intron. Na skutek insercji lub delecji zmieniona moÅ¼e zostaÄ‡ ramka odczytu eksonu, przez co produkt biaÅ‚kowy bÄ™dzie posiadaÅ‚ inne wÅ‚aÅ›ciwoÅ›ci. 
+
+\subsubsection{Warianty UTR}
+Warianty rejonÃ³w nie podlegajÄ…cych translacji 5' i 3' (ang. X5 UTR prime variant and X3 prime UTR variant) - sÄ… to regiony, ktÃ³re nie podlegajÄ… translacji ale sÄ… zwiÄ…zane z jego kontrolÄ…. SÄ… one poÅ‚oÅ¼one terminalnie, po obu stronach regionu podlegajÄ…cemu translacji, od strony 5' oraz 3'. Zmiany w tych sekwencjach powodujÄ… zmiany w strukturach mRNA, jego konformacji i budowy przestrzennej, ktÃ³re biorÄ… udziaÅ‚ w kontroli translacji.
+
+\subsubsection{Warianty nie kodujÄ…ce}
+
+Warianty sekwencji wiÄ…Å¼Ä…cych czynniki transkrypcyjne(ang. TF binding site varaint) \\
+W genomie kaÅ¼dego organizmu znajdujÄ… siÄ™ specyficzne sekwencje, do ktÃ³rych przyÅ‚Ä…czajÄ… siÄ™ czynniki transkrypcyjne(ang. TF - transcription factor). SÄ… to tak zwane sekwencje  promotorowe, ktÃ³re warunkujÄ… miejsce startu transkrypcji. Mutacje w obrÄ™bie tych sekwencji mogÄ… prowadziÄ‡ to zmniejszenia lub caÅ‚kowitego zaprzestania ekspresji danego genu, poniewaÅ¼ czynnik transkrypcyjny nie rozpozna charakterystycznej sekwencji DNA, i w konsekwencji tego nie dojdzie do procesu transkrypcji i dalej translacji.\indent
+
+Ablacja sekwencji wiÄ…Å¼Ä…cych czynniki transkrypcyjne (ang. TFBS ablation) - Jest to rodzaj delecji, ktÃ³ra zawiera regiony zwiÄ…zane z przyÅ‚Ä…czaniem siÄ™ czynnikÃ³w transkrypcyjnych. Podobnie jak w przypadku zmian sekwencji wiÄ…Å¼Ä…cych czynniki transkrypcyjne, usuniÄ™cie ich powoduje zmianÄ™ ekspresji danego genu.
+
+non coding transcript variant - A sequence variant that changes non-coding exon sequence in a non-coding transcript	 \\
+	
+non coding transcript exon variant - A transcript variant of a non coding RNA gene	 \\
+
+Warianty regionÃ³w regulatorowych (ang. regulatory region variant)  - WiÄ™kszoÅ›Ä‡ wariantÃ³w zwiÄ…zanych z fenotypem czÅ‚owieka znajduje siÄ™ w intronach lub regionach miÄ™dzy genowych, a wiÄ™c muszÄ… mieÄ‡ wpÅ‚yw na regulacje ekspresji genÃ³w. W skÅ‚ad takich sekwencji wchodzÄ… wzmacniacze, a takÅ¼e TATA box, CAAT boxm CCAAT box i inne. Zmiany w tych regionach powodujÄ… zmniejszenie lub zwiÄ™kszenie poziomu ekspresji danego genu.
+
+Warianty dojrzaÅ‚Ä™go miRNA(ang. mature miRNA variant) - miRNA lub microRNA jest to maÅ‚y fragment niekodujÄ…cego RNA zawierajÄ…cy do 22 nukleotydÃ³w.  Jest integralnÄ… czÄ™Å›ciÄ… ekspresji mRNA, wpÅ‚ywajÄ…c na niÄ… przez obniÅ¼anie jej poziomu.  DziaÅ‚ajÄ… poprzez komplementarne Å‚Ä…czenie siÄ™ z okreÅ›lonymi sekwencjami na mRNA a w efekcie rozerwanie nici mRNA lub jego destabilizacje poprzez skrÃ³cenie ogonu poli (A). Zmiany w ci sekwencji mogÄ… powodowaÄ‡ hamowanie translacji biaÅ‚ek, ktÃ³re docelowo nie miaÅ‚y nimi  byÄ‡ lub dojdzie do nadekspresji jednego z biaÅ‚ek.
+	
+\subsubsection{Warianty miÄ™dzy genowe}
+
+Upstream gene variant - A sequence variant located 5' of a gene
+	
+Downstream gene variant - A sequence variant located 3' of a gene
+	
+Wariant miÄ™dzygenowy (ang. intergenetic variant) - Jest to zmiana zachodzÄ…ca w sekwencji znajdujÄ…cej siÄ™ pomiÄ™dzy genami i nie peÅ‚niÄ…ca funkcji regulatorowej. Obecnie ich funkcja jest nieznana.
+
+\subsubsection{Warianty niesynonimiczne}
+\indent
+\indent Mutacja zmiany sensu (ang. missense variant) - jest to zmiana mogÄ…ca prowadziÄ‡ do zmiany aminokwasu w syntetyzowanym biaÅ‚ku. W zaleÅ¼noÅ›ci od substytucji mutacja moÅ¼e nie powodowaÄ‡ zmiany funkcji i wÅ‚aÅ›ciwoÅ›ci posiadanych przez biaÅ‚ko (tzw. mutacja konserwatywna), poniewaÅ¼ nowy aminokwas posiada zbliÅ¼one wÅ‚aÅ›ciwoÅ›ci lub prowadziÄ‡ do dysfunkcji biaÅ‚ka(tzw. mutacja niekonserwatywna)w konsekwencji powstania chorÃ³b.
+
+
+Wariant sekwencji. w ktÃ³rym zmienia siÄ™ co najmniej jednÄ… zasadÄ™ koÅ„cowego kodonu niekompletnie opisanego.W kodzie genetycznym wystÄ™pujÄ… kodony odpowiadajÄ…ce za terminacjÄ™ translacji: UGA, UAG i UAA. Napotkanie takiej trÃ³jki nukleotydowej przez rybosom, jest sygnaÅ‚em do zakoÅ„czenia procesu. W przypadku pojawienia siÄ™ zmian w kodzie jednego z tych kodonÃ³w w postaci substytucji, delecji lub insercji, ich funkcje terminacyjne mogÄ… zostaÄ‡ utracone, przeniesione lub za wczeÅ›nie zasygnalizujÄ… terminacje. Natomiast kodon AUG peÅ‚ni podwÃ³jnÄ… funkcje. Jest zarÃ³wno sygnaÅ‚em inicjacji translacji a jednoczeÅ›nie odczytywany jest przez rybosom jako aminokwas metionina. WyrÃ³Å¼niane sÄ… tutaj 4 rodzaje mutacji: \\
+Mutacja kodonu STOP, nie zmieniajÄ…ca jego funkcji (ang. stop retained variant) nie ma wpÅ‚ywu na translacje, poniewaÅ¼ nie jest waÅ¼ne ktÃ³ry z trÃ³jki nukleotydowej zostanie uÅ¼yty do terminacji procesu. PrzykÅ‚adem takiej zmiany moÅ¼e byÄ‡ mutacja w kodonie UAG przez substytucje 3 nukleotydu czyli guaniny(G) na adeninÄ™(A), w wyniku czego uzyskany kodon UAA dalej peÅ‚ni funkcjÄ™ zakoÅ„czenia translacji. \\
+\indent Zmiana powodujÄ…ca utratÄ™ kodonu stop(ang. stop lost) powoduje nienaturalne wydÅ‚uÅ¼enie biaÅ‚ka aÅ¼ do napotkania sygnaÅ‚u terminacji w kodzie kolejnego biaÅ‚ka. KonsekwencjÄ… takiej mutacji bÄ™dzie dysfunkcja dwÃ³ch biaÅ‚ek. \\
+\indent PrzeciwieÅ„stwem do tego jest wariant typy pozyskania kodonu stop(ang. stop gained) w wyniku czego syntetyzowane biaÅ‚ko nie osiÄ…gnie oczekiwanej dÅ‚ugoÅ›ci i wÅ‚aÅ›ciwoÅ›ci lub powstanÄ… dwa krÃ³tkie odcinki polipeptydowe, w przypadku gdy nastÄ™pnym kodenem jest AUG(kodon inicjujÄ…cy translacjÄ™), ktÃ³re nie bÄ™dÄ… posiadaÅ‚y biologicznej funkcji lub bÄ™dzie ona zaburzona. \\
+\indent Na skutek mutacji utraty kodonu start(ang. start lost) pominiÄ™ty zostanie caÅ‚y fragment mRNA aÅ¼ kompleks natrafi na kolejny sygnaÅ‚ startu, ktÃ³ry moÅ¼e byÄ‡ skÅ‚adnikiem biaÅ‚ka, poniewaÅ¼ AUG jest rozpoznawane rÃ³wnieÅ¼ jako sygnaÅ‚ do syntezy metioniny, w wyniku czego powstanie jedynie fragment docelowego biaÅ‚ka o wÅ‚aÅ›ciwoÅ›ciach bardziej lub mniej podobnych. W przeciwnym przypadku inicjacja rozpocznie siÄ™ dopiero gdy rybosom odczyta sygnaÅ‚ inicjacji kolejnego produktu transkrypcji. \\
+\indent Niekompletny kodon terminacyjny (ang. incomplete terminal codon varaint) - Wariant sekwencji. w ktÃ³rym zmienia siÄ™ co najmniej jednÄ… zasadÄ™ koÅ„cowego kodonu niekompletnie opisanego. \\
+
+\subsubsection{Warianty zwiÄ…zane z indel'ami}
+\indent
+\indent Zmiana ramki odczytu (ang. Frameshift variant) - SÄ… to mutacje typu delecja lub insercja powodujÄ…ce zaburzenia w procesie translacji. W zaleÅ¼noÅ›ci od miejsca zajÅ›cia zamiany konsekwencjÄ… moÅ¼e byÄ‡ caÅ‚kowita zmiana Å‚aÅ„cucha polipeptydowego lub jego czÄ™Å›ci. WywierajÄ… one bardzo duÅ¼y wpÅ‚yw na biaÅ‚ko, poniewaÅ¼ taki produkt najczÄ™Å›ciej nie jest w stanie peÅ‚niÄ‡ przeznaczonej funkcji przez zmianÄ™ jego budowy lub dÅ‚ugoÅ›ci, w konsekwencji organizm nie jest w stanie produkowaÄ‡ biaÅ‚ka lub jego iloÅ›Ä‡ jest niewystarczajÄ…ca co ma wpÅ‚yw na rÃ³Å¼ne szlaki metaboliczne i Å¼ycie samego organizmu. JednakÅ¼e aby do tego doszÅ‚o zmiana nie moÅ¼e dotyczyÄ‡ trzech lub wielokrotnoÅ›ci tej liczby, gdyÅ¼ taka zmiana uwzglÄ™dniajÄ…c cechÄ™ kodu genetycznego jakÄ… jest trÃ³jkowoÅ›Ä‡, czyli tworzenie przez trzy nukleotydy kodonu, nie spowoduje zmiany ramki odczytu a jedynie w biaÅ‚ku pojawi siÄ™ nieprawidÅ‚owa liczba aminokwasÃ³w, przy czym takie biaÅ‚ko moÅ¼e zachowaÄ‡ swoje wÅ‚aÅ›ciwoÅ›ci i funkcje. \\
+
+\indent Natomiast warianty typu delecji (ang. inframe deletion) i insercji (ang. inframe insertion) nie zmieniajÄ…ce ramki odczytu sÄ… duÅ¼o bardziej tolerowane przez organizm. Aby doszÅ‚o do takiej mutacji, insercja lub delecja musi obejmowaÄ‡ krotnoÅ›Ä‡ liczby 3. W wyniku tego koÅ„cowe biaÅ‚ko, w zaleÅ¼noÅ›ci od dÅ‚ugoÅ›ci indelu (insercji lub delecji), moÅ¼e dalej peÅ‚niÄ‡ swojÄ… funkcjÄ™, poniewaÅ¼ biaÅ‚ko moÅ¼e posiadaÄ‡ takie same lub zbliÅ¼one wÅ‚aÅ›ciwoÅ›ci jak niezmutowana wersja.
+
+\subsubsection{Warianty Synonimiczne}
+\indent
+\indent Wariant intronu (ang. Intron variant) - to zmiana pojawiajÄ…ca siÄ™ w sekwencji niekodujÄ…cej DNA. Takie mutacje nie wywierajÄ… lub wywierajÄ… wpÅ‚yw na organizm. Jak powszechnie wiadomo, introny sÄ… wykorzystywane w genomie jako sekwencja regulujÄ…ce transkrypcje, regiony zwiÄ…zane ze splicingiem.
+	
+\indent Wariant synonimiczny (ang. synonymous variant ) - jest to zmiana jednego nukleotydu, ktÃ³ry nie powoduje zmiany aminokwasu kodowanego przez triplet. PrzykÅ‚adem takiej mutacji jest zmiana CCC na CCU, w tym przypadku oba kodony odczytywane sÄ… jako prolina. 
+
+\subsubsection{Inne}
 \begin{itemize}
-	\item Mutacja zmiany sensu(ang. missense variant) \\
-Zmiana mog¹ca prowadziæ do zmiany aminokwasu w syntetyzowanym bia³ku. W zale¿noœci od substytucji mutacja mo¿e nie powodowaæ zmiany funkcji i w³aœciwoœci posiadanych przez bia³ko (tzw. mutacja konserwatywna), poniewa¿ nowy aminokwas posiada zbli¿one w³aœciwoœci lub prowadziæ do dysfunkcji bia³ka(tzw. mutacja niekonserwatywna)w konsekwencji powstania chorób.
-
-	\item Niekompletny kodon terminacyjny (ang. incomplete terminal codon varaint) \\
-Wariant sekwencji. w którym zmienia siê co najmniej jedn¹ zasadê koñcowego kodonu niekompletnie opisanego.
+	\item Wariant sekwencji kodujÄ…cej (ang. coding sequence variant) - wariant wystÄ™pujÄ…cy w sekwencji kodujÄ…cej DNA, powodujÄ…cych bezpoÅ›rednia zmiane na produkt. 
+	\item Wariant niekompletnego kodonu terminacyjnego? (ang. incomplete terminal codon variant) - jest to zmiana conajmniej jednego nukleotydu w ostatnim kodonie transkryptu. Nie ma on duÅ¼ego wpÅ‚ywu na produkt ze wzglÄ™du na to, Å¼e proces translacji dobiega koÅ„ca na tym eksonie, czyli koÅ„czy siÄ™ niÄ‡ mRNA.
+	\item Wariant zmiany biaÅ‚ka? (ang. protein altering variant) - jest to zmiana w obrÄ™bie sekwencji kodujÄ…cej biaÅ‚ko, ktÃ³ra powoduje jego modyfikacje w wyniku czego traci swoje wÅ‚aÅ›ciwoÅ›ci funkcjonalne lub ich czÄ™Å›Ä‡.
+	\item Ablacja transkryptu( ang. transcript ablation) - konsekwencjÄ… takiej mutacji jest delecja fragmentu transkryptu, czyli mRNA powstaÅ‚ego na bazie DNA, co ma duÅ¼y wpÅ‚yw ze wzglÄ™du na rozlegÅ‚Ä… delecje co prowadzi do niepowstania koÅ„cowego produktu lub nie posiada on okreÅ›lonych wÅ‚aÅ›ciwoÅ›ci przez co jest niefunkcjonalny.
 \end{itemize}
-
-
- 
-
-
-
-
-\subsubsection{regulatory region variant done?}\indent
-
-Wiêkszoœæ wariantów zwi¹zanych z fenotypem cz³owieka znajduje siê w intronach lub regionach miêdzy genowych, a wiêc musz¹ mieæ wp³yw na regulacje ekspresji genów. W sk³ad takich sekwencji wchodz¹ wzmacniacze, wyciszacze.... co jeszcze
-
-
-\subsubsection{Mutacje zwi¹zane ze splicingiem}\indent
-
-Splicing, czyli sk³adanie genu jest wa¿nym procesem zachodz¹cym podczas dojrzewania mRNA, poprzez odpowiednie wycinanie intronów, a tak¿e eksonów podczas alternatywnego splicingu. Proces ten jest katalizowany przez kompleks bia³kowo-RNA, który nazywany jest spliceosomem. By intron podlega³ wyciêciu, musi posiadaæ dwie silnie konserwatywne sekwencjê: GU na koñcu 5' oraz AG na koñcu 3'. Mutacje tych miejsc mog¹ prowadziæ do powa¿nych konsekwencji dla organizmu. Kompleks mo¿e nie rozpoznaæ miejsca zachodzenia splicingu, w zwi¹zku z czym ekson nie zostanie poprawnie z³o¿ony, mo¿e utraciæ czêœæ ³añcucha, przez przedwczesne odczytanie kodonu STOP lub nienaturalnie siê wyd³u¿yæ. Miejsce splicingowe mo¿e zostaæ przesuniête, powoduj¹c zmianê ramki odczytu, delecjê lub insercjê wielu aminokwasów. 
-W przypadku zmiany w sekwencje akceptora(ang. splice acceptor variant) lub donora(ang. splice donor varaint) konsekwencje mutacji s¹ najpowa¿niejsze, poniewa¿ dotycz¹ konserwatywnych sekwencji otaczaj¹cych ekson.
-Natomiast wariant regionu splicingowego?(ang. splice region variant) dotyczy samych intronów oraz eksonów. Zajœcie mutacji w takich sekwencjach mo¿e skutkowaæ pojawieniem siê nowego miejsca splicingowego, przez co czêœæ intronu mo¿e zostaæ potraktowana jako ekson, a sam ekson mo¿e zostaæ uznany za intron. Na skutek insercji lub delecji zmieniona mo¿e zostaæ ramka odczytu eksonu, przez co produkt bia³kowy bêdzie posiada³ inne w³aœciwoœci. 
-
-\subsubsection{Mutacje zwi¹zane z miejscami inicjacji i terminacji translacji done}\indent
-
-W kodzie genetycznym wystêpuj¹ kodony odpowiadaj¹ce za terminacjê translacji: UGA, UAG i UAA. Napotkanie takiej trójki nukleotydowej przez rybosom, jest sygna³em do zakoñczenia procesu. W przypadku pojawienia siê zmian w kodzie jednego z tych kodonów w postaci substytucji, delecji lub insercji, ich funkcje terminacyjne mog¹ zostaæ utracone, przeniesione lub za wczeœnie zasygnalizuj¹ terminacje. Natomiast kodon AUG pe³ni podwójn¹ funkcje. Jest zarówno sygna³em inicjacji translacji a jednoczeœnie odczytywany jest przez rybosom jako aminokwas metionina. \\
-Wyró¿niane s¹ tutaj 4 rodzaje mutacji:
-\begin{itemize}
-	\item Mutacja kodonu STOP, nie zmieniaj¹ca jego funkcji (ang. stop retained variant) nie ma wp³ywu na translacje, poniewa¿ nie jest wa¿ne który z trójki nukleotydowej zostanie u¿yty do terminacji procesu. Przyk³adem takiej zmiany mo¿e byæ mutacja w kodonie UAG przez substytucje 3 nukleotydu czyli guaniny(G) na adeninê(A), w wyniku czego uzyskany kodon UAA dalej pe³ni funkcjê zakoñczenia translacji.
-	\item Zmiana powoduj¹ca utratê kodonu stop(ang. stop lost) powoduje nienaturalne wyd³u¿enie bia³ka a¿ do napotkania sygna³u terminacji w kodzie kolejnego bia³ka. Konsekwencj¹ takiej mutacji bêdzie dysfunkcja dwóch bia³ek.
-	\item Przeciwieñstwem do tego jest wariant typy pozyskania kodonu stop(ang. stop gained) w wyniku czego syntetyzowane bia³ko nie osi¹gnie oczekiwanej d³ugoœci i w³aœciwoœci lub powstan¹ dwa krótkie odcinki polipeptydowe, w przypadku gdy nastêpnym kodenem jest AUG(kodon inicjuj¹cy translacjê), które nie bêd¹ posiada³y biologicznej funkcji lub bêdzie ona zaburzona. 
-	\item Na skutek mutacji utraty kodonu start(ang. start lost) pominiêty zostanie ca³y fragment mRNA a¿ kompleks natrafi na kolejny sygna³ startu, który mo¿e byæ sk³adnikiem bia³ka, poniewa¿ AUG jest rozpoznawane równie¿ jako sygna³ do syntezy metioniny, w wyniku czego powstanie jedynie fragment docelowego bia³ka o w³aœciwoœciach bardziej lub mniej podobnych. W przeciwnym przypadku inicjacja rozpocznie siê dopiero gdy rybosom odczyta sygna³ inicjacji kolejnego produktu transkrypcji. 
-\end{itemize}
-
-
-\subsubsection{Mutacje zwi¹zane z czynnikami transkrypcyjnymi done?}\indent
-
-Warianty sekwencji wi¹¿¹cych czynniki transkrypcyjne(ang. TF binding site varaint) \\
-W genomie ka¿dego organizmu znajduj¹ siê specyficzne sekwencje, do których przy³¹czaj¹ siê czynniki transkrypcyjne(ang. TF - transcription factor). S¹ to tak zwane sekwencje  promotorowe, które warunkuj¹ miejsce startu transkrypcji. Mutacje w obrêbie tych sekwencji mog¹ prowadziæ to zmniejszenia lub ca³kowitego zaprzestania ekspresji danego genu, poniewa¿ czynnik transkrypcyjny nie rozpozna charakterystycznej sekwencji DNA, i w konsekwencji tego nie dojdzie do procesu transkrypcji i dalej translacji.\indent
-
-TFBS ablation\\
-Jest to rodzaj delecji, która zawiera regiony zwi¹zane z przy³¹czaniem siê czynników transkrypcyjnych. Podobnie jak w przypadku zmian sekwencji wi¹¿¹cych czynniki transkrypcyjne, usuniêcie ich powoduje zmianê ekspresji danego genu.
-
-
-
-\subsubsection{coding sequence varaint}\indent
-
-
-
-
-
-\subsubsection{protein altering varaint}\indent
-
-
-\subsubsection{Mutacje ciche}
-\begin{itemize}
-	\item intergenetic variant
-	
-	\item Downstream gene varaint i Upstream gene varaint
-	
-	\item Intron variant -
-	Jest to zmiana pojawiaj¹ca siê w sekwencji niekoduj¹cej DNA. Takie mutacje nie wywieraj¹ lub wywieraj¹ wp³yw na organizm. Jak powszechnie wiadomo, introny s¹ wykorzystywane w genomie jako sekwencja reguluj¹ce transkrypcje, regiony zwi¹zane ze splicingiem
-	
-	\item X5 UTR prime varaint i X3 prime UTR variant done? \\
-S¹ to zmiany, które nie podlegaj¹ translacji ale s¹ zwi¹zane z jego kontrol¹. S¹ one po³o¿one terminalnie, po obu stronach regionu podlegaj¹cemu translacji, od strony 5' oraz 3'. Zmiany w tych sekwencjach powoduj¹ zmiany w strukturach mRNA, jego konformacji i budowy przestrzennej, które bior¹ udzia³ w kontroli translacji.
-\textbf{coœ jeszcze}
-
-	\item non coding transcript varaint
-	
-	\item non coding transcript exon varaint
-	
-	\item synonymous varaint(ang. mutacja cicha)
-
-Jest to zmiana jednego nukleotydu, który nie powoduje zmiany aminokwasu kodowanego przez triplet. Przyk³adem takiej mutacji jest zmiana CCC na CCU, w tym przypadku oba kodony odczytywane s¹ jako prolina. 
-
-\end{itemize}
-
-\subsubsection{Warianty dojrza³êgo miRNA(ang. mature miRNA variant) done?}\indent
-
-miRNA lub microRNA jest to ma³y fragment niekoduj¹cego RNA zawieraj¹cy do 22 nukleotydów.  Jest integraln¹ czêœci¹ ekspresji mRNA, wp³ywaj¹c na ni¹ przez obni¿anie jej poziomu.  Dzia³aj¹ poprzez komplementarne ³¹czenie siê z okreœlonymi sekwencjami na mRNA a w efekcie rozerwanie nici mRNA lub jego destabilizacje poprzez skrócenie ogonu poli (A). Zmiany w ci sekwencji mog¹ powodowaæ hamowanie translacji bia³ek, które docelowo nie mia³y nimi  byæ lub dojdzie do nadekspresji jednego z bia³ek.
-
-
-
-
-
-
-\subsubsection{transcript ablation}\indent
-
 
 \newpage
-\subsubsection{Konsekwencja mutacji a wp³yw na produkt}
+\subsubsection{Typ wariantu a wpÅ‚yw na produkt}
 \vspace{1cm}
 \begin{center}
 \begin{tabular}{|l|c|}
-Konsekwencja mutacji & wp³yw na produkt \\  \hline
-X3 prime UTR varaint & Œredni\\ 
-X5 prime UTR varaint & Œredni\\ 
-downstream gene varaint & Œredni\\ 
+Wariant & WpÅ‚yw na produkt \\  \hline
+X3 prime UTR varaint & Åšredni\\ 
+X5 prime UTR varaint & Åšredni\\ 
+downstream gene varaint & Åšredni\\ 
 frameshift variant & Wysoki\\ 
 inframe deletion i inframe insertion & Umiarkowany\\ 
-intron variant & Œredni\\ 
+intron variant & Åšredni\\ 
 missense varaint & Umiarkowany\\ 
-non coding transcript exon variant & Œredni \\ 
-non coding transcript variant & Œredni\\ 
-regulatory region variant & Œredni\\ 
+non coding transcript exon variant & Åšredni \\ 
+non coding transcript variant & Åšredni\\ 
+regulatory region variant & Åšredni\\ 
 splice acceptor varaint & Wysoki\\ 
 splice region varaint  & Niski\\ 
 splice donor varaint & Wysoki\\ 
@@ -220,87 +184,130 @@ start lost & Wysoki\\
 stop gained & Wysoki\\ 
 stop lost & Wysoki\\ 
 synosymus varaint & Niski\\ 
-TF binding site varaint & Œredni\\ 
-upstream gene variant & Œredni\\ 
-coding sequence varaint & Œredni\\ 
+TF binding site varaint & Åšredni\\ 
+upstream gene variant & Åšredni\\ 
+coding sequence varaint & Åšredni\\ 
 incomplete terminal codon variant & Niski\\ 
 protein altering variant & Umiarkowany\\ 
 stop retained variant & Niski\\ 
-mature miRNA varian & Œredni\\ 
-TFBS ablation & Œredni\\ 
-intergenic variant & Œredni\\ 
+mature miRNA varian & Åšredni\\ 
+TFBS ablation & Åšredni\\ 
+intergenic variant & Åšredni\\ 
 transcript ablation & Wysoki\\ 
 \end{tabular}
 \end{center}
-\subsection{Cel pracy}\indent
-
-Celem pracy jest analiza zmiennoœci genetycznej cz³owieka. Praca omawia zale¿noœci pomiêdzy iloœci¹ wariantów a ich lokalizacj¹ w kariotypie oraz konsekwencj¹ mutacji, a tak¿e rozwa¿ania na temat samych konsekwencji mutacji. Przedstawione zostan¹ rodzaje konsekwencji, jakie wywieraj¹ zmiany w DNA oraz dlaczego niektóre mutacje s¹ akceptowane przez organizm a inne powoduj¹ jego œmieræ. 
 
 
-\subsection{Baza danych}\indent
+\section{Opis genomu czÅ‚owieka}
+\begin{center}
+\begin{tabular}{c|c|c}
+    Chromosom & WielkoÅ›Ä‡(w Mb) & Liczba genÃ³w  \\  \hline
+    1 & 248.96 & 5,109 \\
+    2 & 242.19 & 3,871 \\
+    3 & 198.3 & 2,990 \\
+    4 & 190.22 & 2,441 \\
+    5 & 181.54 & 2,592 \\
+    6 & 170.81 & 3,005 \\
+    7 & 159.35 & 2,792 \\
+    8 & 145.14 & 2,165 \\
+    9 & 138.4 & 2,270 \\
+    10 & 133.8 & 2,179 \\
+    11 & 135.09	& 2,924 \\
+    12 & 133.28 & 2,526 \\
+    13 & 114.36 & 1,385 \\
+    14 & 107.04	& 2,065 \\
+    15 & 101.99 & 1,824 \\
+    16 & 90.34 & 1,938 \\
+    17 & 83.26 & 2,450 \\
+    18 & 80.37 & 984 \\
+    19 & 58.62 & 2,499 \\
+    20 & 64.44 & 1,358 \\
+    21 & 46.71 & 777 \\
+    22 & 50.82 & 1,189 \\
+\end{tabular}
+\end{center}
 
-Niniejsza praca oparta jest na zestawie danych pochodz¹cych z gnomAD(genome aggregation database). Jest to baza danych opracowana przez miêdzynarodow¹ koalicjê badaczy, w celu agregowania i ujednolicenia danych dotycz¹cych szerokiej gamy projektów sekwencjonowania genomu oraz udostêpniania tych danych dla spo³ecznoœci naukowej. \\
-\vspace{0.5cm}
-Baza danych obejmuje 125 748 sekwencji egzomowych oraz 15 708 sekwencji ca³ego genomu od niepowi¹zanych osobników zsekwencjonowanych w ramach ró¿nych badañ genetycznych specyficznych dla choroby i populacji.
+\section{Cel pracy}\indent
+
+Celem pracy jest analiza zmiennoÅ›ci genetycznej czÅ‚owieka. Praca omawia zaleÅ¼noÅ›ci pomiÄ™dzy iloÅ›ciÄ… wariantÃ³w a ich lokalizacjÄ… w kariotypie oraz konsekwencjÄ… mutacji, a takÅ¼e rozwaÅ¼ania na temat samych konsekwencji mutacji. Przedstawione zostanÄ… wariantÃ³w, jakie wywierajÄ… zmiany w DNA oraz dlaczego niektÃ³re sÄ… akceptowane przez organizm a inne powodujÄ… jego Å›mierÄ‡. Przedstawione zostanÄ… informacje o liczebnoÅ›ci wariantÃ³w, ich rozÅ‚oÅ¼eniu na chromosomach i frekwencji pojawiania siÄ™. 
+
+
+
+
+
+
+
+
+\section{MateriaÅ‚y i metodyka}
+
+\subsection{UÅ¼yte oprogramowanie?}\indent
+W pracy uÅ¼yto wymienione programy i aplikacje:
+\begin{itemize}
+    \item Python w wersji 3.7.2
+    opis ile i jakie skrypty powstaÅ‚y?
+    \item RStudio w wersji 3.5.1
+    co robiÅ‚em i jakich paczek uzyÅ‚em?
+    \item Linux i bash
+    \item Bedtools w wersji 2.28.0
+
+\end{itemize}
+\subsection{Baza danych}
+
+\indent Niniejsza praca oparta jest na zestawie danych pochodzÄ…cych z gnomAD (genome aggregation database). Jest to baza danych opracowana przez miÄ™dzynarodowÄ… koalicjÄ™ badaczy, w celu agregowania i ujednolicenia danych dotyczÄ…cych szerokiej gamy projektÃ³w sekwencjonowania genomu oraz udostÄ™pniania tych danych dla spoÅ‚ecznoÅ›ci naukowej. \\
+
+Baza danych obejmuje 125 748 sekwencji egzomowych oraz 15 708 sekwencji caÅ‚ego genomu od niepowiÄ…zanych osobnikÃ³w zsekwencjonowanych w ramach rÃ³Å¼nych badaÅ„ genetycznych specyficznych dla choroby i populacji.
 
 \indent
-U¿yty zestaw danych zawiera informacje o wariancjach z 22 chromosomów autosomalnych, oraz zawiera 119794797 indywidualnych rekordów. Dostarczaj¹ one informacji o miejscu wyst¹pienia danej mutacji, czyli chromosomie i jego pozycji w nim, porównuje zmieniony fragment z prób¹ kontroln¹, a tak¿e dostarcza informacji o jego frekwencji i iloœci z jak¹ wystêpowa³ podczas tworzenia bazy. 
+UÅ¼yty zestaw danych zawiera informacje o wariancjach z 22 chromosomÃ³w autosomalnych, oraz zawiera 119794797 indywidualnych rekordÃ³w. DostarczajÄ… one informacji o miejscu wystÄ…pienia danej mutacji, czyli chromosomie i jego pozycji w nim, porÃ³wnuje zmieniony fragment z prÃ³bÄ… kontrolnÄ…, a takÅ¼e dostarcza informacji o jego frekwencji i iloÅ›ci z jakÄ… wystÄ™powaÅ‚ podczas tworzenia bazy. 
 
+\subsection{Opis formatu VCF}\
+indent Variant Call Format(VCF) jest to unikalny format plikÃ³w tekstowych uÅ¼ywany w bioinformatyce do przechowywania danych genomu dotyczÄ…cych mutacji. Format zostaÅ‚ opracowany wraz z rozpoczÄ™ciem projektÃ³w sekwencjonowania genomÃ³w na duÅ¼Ä… skalÄ™, takich jak 1000 Genomes Project. 
 
-\subsection{U¿yte oprogramowanie?}\indent
-
-
-\section{Przetwarzanie danych}\indent
-
-Variant Call Format(VCF) jest to unikalny format plików tekstowych u¿ywany w bioinformatyce do przechowywania danych genomu dotycz¹cych mutacji. Format zosta³ opracowany wraz z rozpoczêciem projektów sekwencjonowania genomów na du¿¹ skalê, takich jak 1000 Genomes Project. 
-
-\subsection{Specyfikacja formatu VCF}\indent
-
-Nag³ówek rozpoczyna plik i opisuje jego zawartoœæ. Linie nag³ówka s¹ oznaczone jako {\#}. Specjalne s³owa kluczowe w nag³ówku s¹ oznaczone {\# \#}. Zawieraj¹ one informacje o pochodzeniu pliku, gatunku oraz objaœniaj¹ u¿yte w nim skróty.
+NagÅ‚Ã³wek rozpoczyna plik i opisuje jego zawartoÅ›Ä‡. Linie nagÅ‚Ã³wka sÄ… oznaczone jako {\#}. Specjalne sÅ‚owa kluczowe w nagÅ‚Ã³wku sÄ… oznaczone {\# \#}. ZawierajÄ… one informacje o pochodzeniu pliku, gatunku oraz objaÅ›niajÄ… uÅ¼yte w nim skrÃ³ty.
 \begin{figure}[!htbp] 
   \centering
-    \includegraphics[scale=0.66]{VCF_header.PNG}
-    \caption{Fragment nag³ówka z u¿ytego zestawu danych}
+    \includegraphics[scale=0.66]{VCF/VCF_header.PNG}
+    \caption{Fragment nagÅ‚Ã³wka z uÅ¼ytego zestawu danych}
 \end{figure}
 
 \begin{center}
-\begin{tabular}{|c|c|c|}
+\begin{tabular}{|l|l|l|}
  \hline
- &Nazwa&Krótki opis.\\  \hline
-1&Chrom&Numer chromosomu, na którym znajduje siê dany wariant. \\ \hline
+ &Nazwa&KrÃ³tki opis.\\  \hline
+1&Chrom&Numer chromosomu, na ktÃ³rym znajduje siÄ™ dany wariant. \\ \hline
 2&POS&Pozycja zmiany w sekwencji. \\  \hline
 3&ID&Identyfikator zmiany.  \\  \hline
-4&REF&Allel referencyjny, czyli allel wed³ug genomu referencyjnego.  \\  \hline
-5&ALT&Allel alternatywny, czyli allel jaki pojawi³ siê u osobnika o danym wariancie.  \\  \hline
-6&QUAL&Wynik jakoœci allelu?  \\  \hline
-7&FILTER&Zawiera informacje na temat których filtrów dany rekord nie przeszed³. \\  \hline
-8&INFO&Lista zawieraj¹ca zastawy klucz-wartoœæ, opisuj¹ca wariant. \\  \hline
+4&REF&Allel referencyjny, czyli allel wedÅ‚ug genomu referencyjnego.  \\  \hline
+5&ALT&Allel alternatywny, czyli allel jaki pojawiÅ‚ siÄ™ u osobnika o danym wariancie.  \\  \hline
+6&QUAL&PrawdopodobieÅ„stwo, Å¼e polimorfizm Ref/ALT wystÄ™puje w tym miejscu w skali phred   \\  \hline
+7&FILTER&Zawiera informacje na temat ktÃ³rych filtrÃ³w dany rekord nie przeszedÅ‚. \\  \hline
+8&INFO&Lista zawierajÄ…ca zastawy klucz-wartoÅ›Ä‡, opisujÄ…ca wariant. \\  \hline
 \end{tabular}\\
 \end{center} 
 
 \vspace{1cm}
 
-Pole info zawiera szczegó³owe informacje rekordu.
+Pole info zawiera szczegÃ³Å‚owe informacje rekordu.
 Wykorzystane w pracy kategorie to:
 AC=3, liczba alleli w genotypach
-AN=2654, ca³kowita liczba alleli w u¿ytych genotypach
-AF=1.13037e-03, czêstoœæ wystêpowania danego allelu
-vep, zawieraj¹cy szczegó³owe informacje na temat wariantu takie jak: \\
-Konsekwencja mutacji, wp³yw na produkt, identyfikatory dla biologicznych baz danych(NCBI oraz ENSEMBL) i wiele innych, które nie zosta³y u¿yte na potrzeby pracy.
+AN=2654, caÅ‚kowita liczba alleli w uÅ¼ytych genotypach
+AF=1.13037e-03, czÄ™stoÅ›Ä‡ wystÄ™powania danego allelu
+vep, zawierajÄ…cy szczegÃ³Å‚owe informacje na temat wariantu takie jak: \\
+Typ wariantu, wpÅ‚yw na produkt, identyfikatory dla biologicznych baz danych(NCBI oraz ENSEMBL) i wiele innych, ktÃ³re nie zostaÅ‚y uÅ¼yte na potrzeby pracy.
 
-\begin{figure}[!htbp] 
+\begin{figure}[H]
   \centering
-    \includegraphics[scale=0.78]{VCF_1stline.PNG}
-    \caption{Fragment pliku przedstawiaj¹cy dane}
+    \includegraphics[scale=0.78]{VCF/VCF_1stline.PNG}
+    \caption{Fragment pliku przedstawiajÄ…cy dane}
 \end{figure}
 
-\subsection{Przetwarzanie pliku}\indent
+\subsection{Przetwarzanie pliku VCF}\indent
 
-Z racji du¿ego rozmiaru pliku oraz zawartoœci niepotrzebnych informacji, plik ten musia³ zostaæ odpowiednio przygotowany zanim zostanie u¿yty do przeprowadzenia analizy. \\ 
-W tym celu zosta³ stworzony krótki skrypt w Pythonie, którego zadaniem by³a ekstrakcja kluczowych dla analizy danych.
+Z racji duÅ¼ego rozmiaru pliku oraz zawartoÅ›ci niepotrzebnych informacji, plik ten musiaÅ‚ zostaÄ‡ odpowiednio przygotowany zanim zostanie uÅ¼yty do przeprowadzenia analizy. \\ 
+W tym celu zostaÅ‚ stworzony krÃ³tki skrypt w Pythonie, ktÃ³rego zadaniem byÅ‚a ekstrakcja kluczowych dla analizy danych.
 
 
-\subsection{Kod skryptu u¿ytego do wydobycia danych}
+Kod skryptu uÅ¼ytego do wydobycia danych \\
 potrzebne?
 \begin{verbatim}
 with open
@@ -327,9 +334,61 @@ as output_file:
 \end{verbatim}
 
 
-\section{Analiza danych}
-\subsection{Warianty dotycz¹ce bia³ek}
-wykres1 \\
+\section{Wyniki}
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth]{hist_all_variants.png}
+    \caption{Histogram przedstawiajÄ…cy stosunek ogÃ³lnej liczby wariantÃ³w}
+\end{figure}
+DominujÄ…cymi kategoriami sÄ… intergenetic variant, intron variant oraz non synonymous variant. DuÅ¼e liczebnoÅ›ci dwÃ³ch pierwszych kategoria wynikajÄ… z miejsca ich wystÄ™powania. Regiony miÄ™dzygenowe jak i introny ze wzglÄ™du na brak niesienia informacji genetycznej, sÄ… doÅ›Ä‡ zmienne i niekonserwatywne. Zmiany w ich obrÄ™bie przewaÅ¼nie nie objawiajÄ… siÄ™ fenotypowo, chyba Å¼e dotyczÄ… regionÃ³w regulatorowych zmieniajÄ…c poziom ekspresji. Natomiast mutacje niesynonimiczne, czyli zmieniajÄ…ce aminokwas wystÄ™pujÄ…cy w biaÅ‚ku, w wiÄ™kszoÅ›ci przypadkÃ³w nie wpÅ‚ywa na produkt. Zmiana do kilku aminokwasÃ³w moÅ¼e nie zmieniÄ‡ zbytnio wÅ‚aÅ›ciwoÅ›ci biaÅ‚ka dziÄ™ki czemu bÄ™dzie ono dalej funkcjonalne. Najmniej wariantÃ³w obserwujÄ™ siÄ™ dla kategorii frameshift, inframe indel oraz other, ktÃ³re zawierajÄ… kategorie: coding sequence variant, transcript ablation oraz protein altering variant. Zmiany tego typu zazwyczaj niosÄ… powaÅ¼ne konsekwencje w zwiÄ…zku z czym nie sÄ… tolerowane przez organizm i mogÄ… prowadziÄ‡ do chorÃ³b lub Å›mierci. 
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth]{hist_prot_variants.png}
+    \caption{Histogram przedstawiajÄ…cy stosunek ogÃ³lnej liczby wariantÃ³w w przypadku wariantÃ³w zwiÄ…zanych z biaÅ‚kami}
+\end{figure}
+
+Natomiast w przypadku wariantÃ³w zwiÄ…zanych z biaÅ‚kami dominujÄ…cymi kategoriami sÄ… missense variant oraz synonymous variant. Warianty missensowne czÄ™sto majÄ… maÅ‚y wpÅ‚yw na biaÅ‚ko, przez to mutacje tego typu sÄ… akceptowane przez organizm. Dochodzi do tego gdy aminokwas zostajÄ™ zastÄ…piony innym, ale o zbliÅ¼onych wÅ‚aÅ›ciwoÅ›ciach, dziÄ™ki czemu biaÅ‚ko zachowuje swojÄ… funkcje. Rzadziej zostaje podmieniony na taki, ktÃ³ry powodujÄ™ zmianÄ™ funkcji biaÅ‚ka. Takie mutacje mogÄ… prowadziÄ‡ do zaburzeÅ„ lub Å›mierci. Warianty synonimiczne czyli ciche nie powodujÄ… zmiany w kodowanym aminokwasie i nie ma wpÅ‚ywu na funkcjonowanie organizmu. 
+\subsection{Warianty dotyczÄ…ce biaÅ‚ek}
+
+\subsubsection{Wykresy dotyczÄ…ce liczebnoÅ›ci wariantÃ³w}
+
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth]{Warianty_bialkowe/bar_plot_varaint_count_prot.png}
+    \caption{Wykres przedstawiajÄ…cy iloÅ›Ä‡ wariantu na danym chromosomie}
+\end{figure}
+\indent
+\indent AnalizujÄ…c powyÅ¼szy wykres stwierdzono, Å¼e najwiÄ™ksza iloÅ›Ä‡ wariantÃ³w zlokalizowana jest na chromosomie 1, co wynika z faktu Å¼e jest to najwiÄ™kszy chromosom i posiada najwiÄ™kszÄ… iloÅ›Ä‡ genÃ³w. Natomiast chromosom 2 i 19 posiada zbliÅ¼onÄ… liczbÄ™ wariantÃ³w, pomimo tego Å¼e chromosom 2 posiada 3,871 genÃ³w i wielkoÅ›Ä‡ rÃ³wnÄ… 242.19 a chromosom 19 - 2,499 genÃ³w i wielkoÅ›Ä‡ rÃ³wna 58.62. Wynika z tego, Å¼e chromosom 19 cechujÄ™ siÄ™ stosunkowo maÅ‚Ä… konserwatywnoÅ›ciÄ…. Niewielka liczba wariantÃ³w na chromosomie 13 moÅ¼e wynikaÄ‡ z maÅ‚ej liczby genÃ³w (1,385), dla porÃ³wnania podobnÄ… liczbÄ™ posiada chromosom 20 (1,358), biorÄ…c pod uwagÄ™ jego wielkoÅ›Ä‡ (114.36 Mb) moÅ¼na wnioskowaÄ‡ o duÅ¼ej liczbie i wielkoÅ›ci regionÃ³w niekodujÄ…cych. 
+
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth]{Warianty_bialkowe/stacked_bar_plot_varaint_count.png}
+    \caption{Wykres przedstawiajÄ…cy procentowy udziaÅ‚ iloÅ›ci wariantÃ³w na danym chromosomie}
+\end{figure}
+\indent
+\indent RozÅ‚oÅ¼enie wariantÃ³w na poszczegÃ³lnych chromosomach jest stosunkowo rÃ³wne. NajwiÄ™kszy odsetek stanowiÄ…: 
+\begin{itemize}
+    \item Warianty missensowne (ang. missense\_variant)
+    \item Warianty synonimiczne (ang. synonymous\_variant)
+    \item Warianty splicingowe (ang. splicing)
+\end{itemize}
+AnalizujÄ…c wykres, stwierdzono ze wyÅ¼ej wymienione warianty znajdujÄ… siÄ™ pod najmniejszÄ… presjÄ… ewolucyjnÄ… i powodujÄ… najwiÄ™kszÄ… zmiennoÅ›Ä‡ fenotypowÄ…. PozostaÅ‚e warianty pojawiajÄ… siÄ™ bardzo rzadko. Jest to spowodowane ich wpÅ‚ywem na organizm, ktÃ³ry musi nieÅ›Ä‡ ze sobÄ… negatywny efekt lub byÄ‡ letalnym dla organizmu. 
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth]{Warianty_bialkowe/bar_plot_variant_count_prot_other.png}
+    \caption{Wykres przedstawiajÄ…cy warianty zawarte w kategorii 'Other'}
+\end{figure}
+
+
+
+\subsubsection{Wykresy dotyczÄ…ce frekwencji wariantÃ³w}
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth]{Warianty_bialkowe/bar_plot_AF_mean_prot.png}
+    \caption{Wykres przedstawiajÄ…cy frekwencjÄ™ wariantÃ³w na danym chromosomie}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth]{Warianty_bialkowe/bar_plot_AF_mean_prot_other.png}
+    \caption{Wykres przedstawiajÄ…cy frekwencje wariantÃ³ w kategori 'Other'}
+\end{figure}
+\begin{figure}[H]
+    \includegraphics[width=1\textwidth]{Warianty_bialkowe/stacked_bar_plot_variant_count_prot_other.png}
+    \caption{Wykres przedstawiajÄ…cy procentowy udziaÅ‚ frekwencji w kategorii 'Other'}
+\end{figure}
 wykres2 \\
 
 \subsection{Wszystkie warianty genomu}
@@ -338,6 +397,7 @@ wykres2 \\
 
 \newpage
 \section{Bibliografia}
+
 \begin{verbatim}
 https://en.wikipedia.org/wiki/Variant_Call_Format
 https://www.ensembl.org/info/genome/variation/prediction/predicted_data.html
@@ -348,6 +408,7 @@ https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4797991/
 Ian G. Cannell1, Yi Wen Kong1 and Martin Bushell2
 School of Pharmacy, Centre for Biomolecular Sciences, University of Nottingham, University Park, Nottingham NG7 2RD, U.K)https://www.ncbi.nlm.nih.gov/pubmed/19021530
 https://onlinelibrary.wiley.com/doi/abs/10.1002/wrna.1451
+https://www.ncbi.nlm.nih.gov/genome?LinkName=assembly_genome&from_uid=1493941
 \end{verbatim}
 
 \end{document}
