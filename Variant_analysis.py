@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 """
 Created on Tue Nov 13 15:26:10 2018
-gnomad.exomes.r2.1.sites.chr21.vcf
 @author: dawid
 """
 import time
