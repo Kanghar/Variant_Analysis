@@ -2,13 +2,10 @@
 
 #Wczytywanie_pliku
 setwd("X:/Variant_analysis_data")
-library("dplyr")
-library("tidyr")
 library("ff")
 library("ggplot2")
 library(reshape2)
 library(scales)
-library(wesanderson)
 
 
 #ktory_plik_do_czego
@@ -22,8 +19,7 @@ gnomad_all_chromo <- read.csv.ffdf(file="test_file2.txt",sep=',', VERBOSE=TRUE, 
 gnomad_all_chromo <- read.csv.ffdf(file="gnomad_new_cat_2.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
 
 #kategoryzowane_warianty_bia³kowe_other
-gnomad_all_chromo <- read.csv.ffdf(file="gnomad_prot_other_2.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
-
+gnomad_all_chromo <- read.csv.ffdf(file="gnomad_prot_other.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
 
 #kategoryzowane_warianty_variant_count
 gnomad_all_chromo <- read.csv.ffdf(file="gnomad_new_cat_3.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
@@ -31,15 +27,39 @@ gnomad_all_chromo <- read.csv.ffdf(file="gnomad_new_cat_3.txt",sep='\t', VERBOSE
 #kategoryzowane_warianty_variant_count_other
 gnomad_all_chromo <- read.csv.ffdf(file="gnomad_other_2.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
 
+#Plik_z_srednimi_frekwencjami_wariantow_na_chromosomie
+mean_freq <- read.table("variant_freq_chr_mean.tsv",sep='\t',header=FALSE)
+
+#exon_loc_matix
+exon_loc_matrix <- read.table("exon_loc_matrix.tsv",sep='\t',header=TRUE)
+
+#exon_loc_synonymous
+exon_loc <- read.table("exon_loc_synonymous.txt",sep=' ',header=FALSE)
+
+#exon_loc_rare_synonymous
+exon_loc <- read.table("exon_loc_rare_synonymous_ccds.txt",sep=' ',header=FALSE)
+
+#cds_exon_loc
+gnomad_all_chromo <- read.csv.ffdf(file="bedtools_cds_final.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
+exon_loc <- read.table("exon_loc_cds.txt",sep=' ',header=FALSE)
+
+#trans_loc_synonymous
+trans_loc <- read.table("trans_loc_synonymous.txt",sep=' ',header=FALSE)
+ 
+#exon_loc_rare
+exon_loc = read.table('exon_rare_col_sums.tsv',header=TRUE)
+
 #plik_z_lokacjami_egzonów
 exon_loc <- read.csv.ffdf(file="bedtools_final_output.txt",sep='\t', VERBOSE=TRUE, first.rows=10000,next.rows=50000, colClasses=NA)
 
-names(gnomad_all_chromo) <- c('Chrom','Pos','Ref','Alt','AC','AN','AF','Variant','Impact','gene','ens_gene','Feature','ens_trans','mutation','num')
+#gen_len
+gen_len <- read.table("gen_len.txt",sep='\t',header=FALSE)
 
-names(z) <- c('Chrom','Pos','Ref','Alt','AC','AN','AF','Variant','Impact','gene','ens_gene','Feature','ens_trans','mutation','num')
-#TABELE
+#variant_count
+variant_count <- read.table("variant_count_all_variants.txt",sep='\t',header=TRUE)
 
-z = as.data.frame(cbind(gnomad_all_chromo[,1],gnomad_all_chromo[,7]))
+variant_count <- aggregate(gnomad_all_chromo[,15],by=list(gnomad_all_chromo[,8],gnomad_all_chromo[,1]),FUN='sum')
+names(variant_count) <- c('Variant','Chromosome','Count')
 
 #AF_mean
 mean_freq <- aggregate(gnomad_all_chromo[,7],list(gnomad_all_chromo[,1],gnomad_all_chromo[,8]),mean)
@@ -47,56 +67,61 @@ names(mean_freq)[1]<-"Chromosom"
 names(mean_freq)[2]<-"Wariant"
 names(mean_freq)[3]<-"Frekwencja"
 
-
-
 #Variant_count
 variant_count <- aggregate(gnomad_all_chromo[,15],by=list(gnomad_all_chromo[,8],gnomad_all_chromo[,1]),FUN='sum')
 names(variant_count) <- c('Variant','Chromosome','Count')
 
-#AF_count
+#exon_loc_count
+exon_table = aggregate(exon_loc_rare[,3],by=list(exon_loc_rare[,2]),FUN='sum')
 
-AF_count <- aggregate(gnomad_all_chromo[,15],by=list(gnomad_all_chromo[,7],gnomad_all_chromo[,1]),FUN='sum')
-names(AF_count) <- c('AF','Chromosome','Count')
-names(z1) <- c('Chromosome','AF','Count')
+#trans_loc_count
+trans_table = aggregate(trans_loc[,3],by=list(trans_loc[,2]),sum)
 
-z = gnomad_all_chromo[which(gnomad_all_chromo[,1]=='2'),]
-z1 = cbind(z[,1],z[,7],z[15])
-
-AF_count <- aggregate(z1[,3],by=list(z1[,2],z1[,1]),FUN='sum')
-names(AF_count) <- c('AF','Chromosome','Count')
-#119794797 gnomad_new_cat_2.txt
-
-
-#exon_loc
-loc = aggregate(exon_loc[,1],by=list(exon_loc[,1],exon_loc[,4]),FUN='sum')
-
-zz = exon_loc[which(exon_loc[,1]=='chr1'),]
+names(trans_table) <- c('loc','count')
 
 #WYKRESY
-
 #BAR_PLOTS
 #variant_count
-ggplot(variant_count,aes(x = Chromosome, y = Count, fill = Variant)) + geom_bar(stat = "identity", colour = "black") + xlab("\nChromosom") + ylab("Liczba_wariantów\n") + guides(fill=guide_legend(title="Rodzaj wariantu")) + scale_x_continuous(breaks=1:22) 
-
-ggplot(variant_count,aes(x = Chromosome, y = Count, fill = Variant)) + geom_bar(position = "fill",stat = "identity",colour = "black") + scale_y_continuous(labels = percent_format()) + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Liczba_wariantów(w %)\n") + scale_x_continuous(breaks=1:22) 
-
-#violin_plot
-ggplot(z, aes(x = Chrom, y = AF)) + 
-  geom_violin()
-
-ggplot(z1, aes(Chromosome, AF)) + geom_violin(aes(fill = Chromosome))  + ylim(0, 0.0075)
-
-ggplot(AF_count, aes(Chromosome, AF)) + geom_violin(aes(fill = Count)) + ylim(0, 0.001)
+ggplot(variant_count,aes(x = Chromosome, y = Count, fill = reorder(Variant,Count))) + 
+geom_bar(stat = "identity", colour = "black") + 
+xlab("\nChromosom") + ylab("Liczba wariantów w tysi¹cach\n") + guides(fill=guide_legend(title="Rodzaj wariantu")) + scale_x_continuous(breaks=1:22) + theme_grey(base_size = 16) + geom_text(aes(label=(round(Count/1000))),size=3.5,position=position_stack(0.5))
 
 
-#Stacked_bar_AF
+ggplot(variant_count,aes(x = Chromosome, y = Count, fill = reorder(Variant,Count))) + 
+geom_bar(position = "fill",stat = "identity",colour = "black") + scale_y_continuous(labels = percent_format()) + guides(fill=guide_legend(title="Rodzaj wariantu")) + 
+xlab("\nChromosom") + ylab("Liczba wariantów(w %)\n") + scale_x_continuous(breaks=1:22) + 
+theme_grey(base_size = 16) + geom_text(aes(label=(round(Count,2)*100)),size=3.5,position=position_stack(0.5))
 
-ggplot(mean_freq,aes(x = Chromosom, y = Frekwencja, fill = Wariant)) + geom_bar(position = "fill",stat = "identity",colour = "black")  + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Frekwencja\n") + scale_x_continuous(breaks=1:22)
+#AF
+ggplot(mean_freq,aes(x = Chromosom, y = Frekwencja, fill = reorder(Wariant,-Frekwencja),label = round(Frekwencja,5)*100)) + geom_bar(position = "fill",stat = "identity",colour = "black")  + guides(fill=guide_legend(title="Rodzaj wariantu")) + xlab("\nChromosom") + ylab("Frekwencja\n") + scale_x_continuous(breaks=1:22) 
 
-#AF_bar
-ggplot(data=mean_freq, aes(x=Chromosom, y=Frekwencja, fill=Wariant, order==as.numeric(Frekwencja))) +
-  geom_bar(stat = "identity",colour = "black") + scale_x_continuous(breaks=1:22) 
+ggplot(mean_freq, aes(x=Chromosom, y=Frekwencja, fill = reorder(Wariant,-Frekwencja),label = round(Frekwencja,5))) +
+geom_bar(stat = "identity",colour = "black") + xlab("\nChromosom") + ylab("Frekwencja\n") + scale_x_continuous(breaks=1:22)+
+geom_text(size = 3, position = position_stack(vjust = 0.5))
+
+#hist_exon_loc
+ggplot(exon_loc_ag, aes(x=Exon_loc, y=Count)) +
+geom_bar(stat = "identity")+ ylab("Liczebnoœæ\n") + xlab("\nPozycja na egzonie")+theme_grey(base_size = 16)
+
+#scatterplot_data
+gen_len_ag <- aggregate(gen_len$V2,by=list(gen_len$V1),sum)
+variant_count_ag <- aggregate(variant_count$Count,by=list(variant_count$Chromosome),sum)
+scatter_plot_df <- merge(variant_count_ag,gen_len_ag,by="Group.1")
+names(scatter_plot_df) <- c('Chrom','Variant_count','Gen_len')
+attach(scatter_plot_df)
+plot(Variant_count, Gen_len, main="Zale¿noœæ liczba wariantów a wielkoœæ regionów koduj¹cych", 
+     xlab="Liczba wariantów ", ylab="Wielkoœæ regionów koduj¹cych ", pch=19)
+text(Variant_count, Gen_len, row.names(scatter_plot_df), cex=0.8, pos=1)
+
+plot(Variant_count, Gen_Count, main="Zale¿noœæ liczba wariantów a liczb¹ genów", 
+     xlab="Liczba wariantów ", ylab="Liczba genów ", pch=19)
+text(Variant_count, Gen_Count, row.names(scatter_plot_df), cex=0.8, pos=1)
+     
+#boxplot
+ggplot(data1, aes(x=as.factor(data1$Group.2), y=x)) + 
+  geom_boxplot()
   
+#normalizacja_danych  
+boxplot_data = data.Normalization(data,type="n10",normalization="column")
 
-ggplot(zz, aes(x=zz[,4])) + geom_histogram(stat="count") + scale_x_continuous(breaks=0:1) 
 
